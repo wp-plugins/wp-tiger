@@ -16,27 +16,27 @@ A easy plugin to integrate WordPress contact form to vtiger crm.
 
 Wp-tiger plugin helps to easily capture leads to vtiger crm from your wordpress through a contact form. Short code can used in page, post and separate short code for widgets as well.
 
-** Features **
+**Features**
  
-*    Can get fields directly from vtiger to wordpress.
-*    Options to enable, disable and make fields mandatory.
-*    Short code to integrate form in post / page.
-*    Separate short code to integrate form even as widget in sidebar.
+*    Can get fields directly from vtiger to wordpress
+*    Options to enable, disable and make fields mandatory
+*    Short code to integrate form in post / page
+*    Separate short code to integrate form even as widget in sidebar
  
 
-**In [Pro version](http://store.smackcoders.com/connectors/wp-vtiger-pro.html) you can enjoy most advances features like **
+**In [Pro version](http://store.smackcoders.com/connectors/wp-vtiger-pro.html) you can enjoy most advances features like**
 
 *    Unlike free version, the pro version uses Webservices to communicate with vtigerCrm.
-*    Capture both lead and contacts from wordpress to vtiger.
-*    Change the position order of the fields from wp dashboard itself.
-*    Change the display label of the fields.
-*    Set mandatory fields using wp-tiger pro options.
-*    Add Captcha feature to reduce risk of spam bots.
-*    Can generate shortcodes seperately for page/post and mini widget forms to accomadate within any theme sidebar. So no design modification needed.
+*    Capture both lead and contacts from wordpress to vtiger
+*    Change the position order of the fields from wp dashboard itsel
+*    Change the display label of the fields
+*    Set mandatory fields using wp-tiger pro options
+*    Add Captcha feature to reduce risk of spam bots
+*    Can generate shortcodes seperately for page/post and mini widget forms to accomadate within any theme sidebar. So no design modification needed
 
 
 
-** Additional Features for Free Version **
+**Additional Features for Free Version**
  
      Will be added in next release. Additional features are under development. Please check back again for updated version.
 
@@ -53,7 +53,7 @@ Wp-tiger is very easy to install like any other wordpress plugin. No need to edi
 
 == Screenshots ==
 
-1. The screenshot-1.png shows the vtiger settings configuration.
+1. The screenshot-1.png shows the vtiger settings configuration
 2. The screenshot-2.png shows the vtiger lead fields to be shown in the contact form page or post.
 3. The screenshot-3.png shows the vtiger lead fields to be shown in the widget area.
 4. The screenshot-4.png shows the form which captures the vtiger leads.
