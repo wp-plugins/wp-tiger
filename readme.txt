@@ -19,9 +19,9 @@ Wp-tiger plugin helps to easily capture leads to vtiger crm from your wordpress 
 == Installation ==
  
 Wp-tiger is very easy to install like any other wordpress plugin. No need to edit or modify anything here.
+
 1.    Unzip the file 'wp-tiger.zip'.
-2.    Upload the ' wp-tiger ' directory to '/wp-content/plugins/' directory using ftp client.
-       or upload and install wp-tiger.zip through plugin install wizard in wp admin panel.
+2.    Upload the ' wp-tiger ' directory to '/wp-content/plugins/' directory using ftp client or upload and install wp-tiger.zip through plugin install wizard in wp admin panel.
 3.    Activate the plugin through the 'Plugins' menu in WordPress.
 4.    After activating, you will see an option for ‘wp-tiger’ in the admin menu (left navigation).
 
