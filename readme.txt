@@ -9,7 +9,7 @@ Plugin URI: http://www.smackcoders.com
 Author: smackcoders.com
 Author URI: http://www.smackcoders.com
 License: “GPLv2 or later”
-Donate link: fenzik@gmail.com
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=fenzik@gmail.com&lc=JP&item_name=WordPress%20Plugins&item_number=wp%2dplugins&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted
  
 An easy plugin to integrate WordPress contact form to VtigerCRM.
 == Description ==
