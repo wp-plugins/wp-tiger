@@ -1,44 +1,43 @@
-=== Wordpress vTiger crm Lead Capture ===
-Contributors: smackcoders
-Tags: admin, administration, automatic,  contact, form, list, newsletter, plugin, shortcode, sidebar, widget, widgets, wordpress, crm, vitiger, lead
+=== Wordpress vTiger CRM Lead Capture Plugin ===
+Contributors: Smackcoders
+Tags: crm, admin, administration, automatic,  contact, form, list, newsletter, plugin, shortcode, sidebar, widget, widgets, wordpress, crm, vtiger, lead, wptiger
 Requires at least: 3.1
 Tested up to: 3.31
 Stable tag: 4.3
-Version: 1.0
+Version: 1.0.0
 Plugin URI: http://www.smackcoders.com
 Author: smackcoders.com
 Author URI: http://www.smackcoders.com
 License: “GPLv2 or later”
 Donate link: fenzik@gmail.com
  
-A easy plugin to integrate WordPress contact form to vtiger crm.
+An easy plugin to integrate WordPress contact form to VtigerCRM.
 == Description ==
 
 Wp-tiger plugin helps to easily capture leads to vtiger crm from your wordpress through a contact form. Short code can used in page, post and separate short code for widgets as well.
 
 **Features**
  
-*    Can get fields directly from vtiger to wordpress
-*    Options to enable, disable and make fields mandatory
-*    Short code to integrate form in post / page
-*    Separate short code to integrate form even as widget in sidebar
+*    Admin can fetch vtigerCRM lead/contact fields directly to wordpress forms.
+*    Options to enable, disable and make fields mandatory.
+*    Short code to integrate form in post / page.
+*    Separate short code to integrate form even as widget in sidebar.
  
 
 **In [Pro version](http://store.smackcoders.com/connectors/wp-vtiger-pro.html) you can enjoy most advances features like**
 
-*    Unlike free version, the pro version uses Webservices to communicate with vtigerCrm.
-*    Capture both lead and contacts from wordpress to vtiger
-*    Change the position order of the fields from wp dashboard itsel
+*    Unlike free version, the pro version uses Webservices to communicate with vTigerCRM.
+*    Capture both lead and contacts from wordpress to vTigerCRM.
+*    Change the position order of the fields from wp dashboard itself.
 *    Change the display label of the fields
-*    Set mandatory fields using wp-tiger pro options
-*    Add Captcha feature to reduce risk of spam bots
-*    Can generate shortcodes seperately for page/post and mini widget forms to accomadate within any theme sidebar. So no design modification needed
-
+*    Set mandatory fields using wp-tiger pro options.
+*    Add Captcha feature to reduce risk of spam bots.
+*    Can generate shortcodes seperately for page/post and mini widget forms to accomadate within any theme sidebar. So no design modification needed.
 
 
 **Additional Features for Free Version**
  
-     Will be added in next release. Additional features are under development. Please check back again for updated version.
+     Feel free to request for the new features. Requested features will be added in next release based on the effort involved. Additional features are under development. Please check back again for updated version.
 
 
 
@@ -61,14 +60,14 @@ Wp-tiger is very easy to install like any other wordpress plugin. No need to edi
  
 == Changelog ==
  
-= 1.0 =
+= 1.0.0 =
 
 This is the basic version. Tested and found works well without any issues.
  
  
 == Upgrade Notice ==
  
-= 1.1 =
+= 1.1.0 =
 
 Updates are scheduled to release on November 2012.
 
