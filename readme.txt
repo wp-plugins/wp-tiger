@@ -8,7 +8,7 @@ Version: 1.0.0
 Plugin URI: http://www.smackcoders.com
 Author: smackcoders.com
 Author URI: http://www.smackcoders.com
-License: “GPLv2 or later”
+License: "GPLv2 or later"
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=fenzik@gmail.com&lc=JP&item_name=WordPress%20Plugins&item_number=wp%2dplugins&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted
  
 An easy plugin to integrate WordPress contact form to VtigerCRM.
@@ -48,7 +48,7 @@ Wp-tiger is very easy to install like any other wordpress plugin. No need to edi
 1.    Unzip the file 'wp-tiger.zip'.
 2.    Upload the ' wp-tiger ' directory to '/wp-content/plugins/' directory using ftp client or upload and install wp-tiger.zip through plugin install wizard in wp admin panel.
 3.    Activate the plugin through the 'Plugins' menu in WordPress.
-4.    After activating, you will see an option for ‘wp-tiger’ in the admin menu (left navigation).
+4.    After activating, you will see an option for 'wp-tiger' in the admin menu (left navigation).
 
 == Screenshots ==
 
@@ -67,7 +67,7 @@ This is the basic version. Tested and found works well without any issues.
  
 == Upgrade Notice ==
  
-= 1.1.0 =
+= 2.0.0 =
 
 Updates are scheduled to release on November 2012.
 
