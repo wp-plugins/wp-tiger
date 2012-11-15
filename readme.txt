@@ -5,32 +5,32 @@ Requires at least: 3.1
 Tested up to: 3.31
 Stable tag: 4.3
 Version: 1.0.0
-Author: Smackcoders
-Author URI: http://profiles.wordpress.org/smackcoders/
+Author: [Smackcoders] (http://profiles.wordpress.org/smackcoders/)
 Donate link: http://www.smackcoders.com/donate.html
+License: GPLv2 or later
  
-An easy plugin to integrate WordPress contact form to VtigerCRM.
+An easy to use plugin integrates Word Press contact form with Vtiger CRM.
 == Description ==
 
-Wp-tiger plugin helps to easily capture leads to vtiger crm from your wordpress through a contact form. Short code can used in page, post and separate short code for widgets as well.
+Wp-tiger plugin helps to easily capture leads to vtiger crm from your word press through a contact form. Short code can used in page, post and separate short code for widgets as well.
 
 **Features**
  
 *    Admin can fetch vtigerCRM lead/contact fields directly to wordpress forms.
-*    Options to enable, disable and make fields mandatory.
+*    Options to enable/disable and make fields mandatory.
 *    Short code to integrate form in post / page.
 *    Separate short code to integrate form even as widget in sidebar.
  
 
 **In [Pro version](http://store.smackcoders.com/connectors/wp-vtiger-pro.html) you can enjoy most advances features like**
 
-*    Unlike free version, the pro version uses Webservices to communicate with vTigerCRM.
-*    Capture both lead and contacts from wordpress to vTigerCRM.
+*    Unlike free version, the pro version uses Web services to communicate with vTiger CRM.
+*    Capture both lead and contacts from wordpress to vTiger CRM.
 *    Change the position order of the fields from wp dashboard itself.
 *    Change the display label of the fields
 *    Set mandatory fields using wp-tiger pro options.
 *    Add Captcha feature to reduce risk of spam bots.
-*    Can generate shortcodes seperately for page/post and mini widget forms to accomadate within any theme sidebar. So no design modification needed.
+*    Can generate shortcodes separately for page/post and mini widget forms to accommodate within any theme sidebar. So no design modification needed.
 
 
 **Additional Features for Free Version**
