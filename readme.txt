@@ -5,11 +5,9 @@ Requires at least: 3.1
 Tested up to: 3.31
 Stable tag: 4.3
 Version: 1.0.0
-Plugin URI: http://www.smackcoders.com
 Author: smackcoders.com
-Author URI: http://www.smackcoders.com
-License: "GPLv2 or later"
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=fenzik@gmail.com&lc=JP&item_name=WordPress%20Plugins&item_number=wp%2dplugins&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted
+Author URI: http://profiles.wordpress.org/smackcoders/
+Donate link: http://www.smackcoders.com/donate.html
  
 An easy plugin to integrate WordPress contact form to VtigerCRM.
 == Description ==
