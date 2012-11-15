@@ -5,7 +5,7 @@ Requires at least: 3.1
 Tested up to: 3.31
 Stable tag: 4.3
 Version: 1.0.0
-Author: smackcoders.com
+Author: Smackcoders
 Author URI: http://profiles.wordpress.org/smackcoders/
 Donate link: http://www.smackcoders.com/donate.html
  
