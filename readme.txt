@@ -4,7 +4,7 @@ Tags: crm, admin, administration, automatic,  contact, form, list, newsletter, p
 Requires at least: 3.1
 Tested up to: 3.31
 Stable tag: 4.3
-Version: 1.0.0
+Version: 1.1.0
 Author: [Smackcoders](http://profiles.wordpress.org/smackcoders/)
 Donate link: http://www.smackcoders.com/donate.html
 License: GPLv2 or later
@@ -35,7 +35,12 @@ Wp-tiger plugin helps to easily capture leads to vtiger crm from your word press
 
 **Additional Features for Free Version**
  
-     Feel free to request for the new features. Requested features will be added in next release based on the effort involved. Additional features are under development. Please check back again for updated version.
+Feel free to request for the new features. Requested features will be added in next release based on the effort involved. Additional features are under development. Please check back again for updated version.
+
+Support and Feature requests. 
+---------------------------- 
+Please visit http://www.smackcoders.com/category/free-wordpress-plugins/google-seo-author-snippet-plugin.html for guides and tutorials. 
+For quick response and reply please create issues in our [support](http://code.smackcoders.com/wp-tiger/issues) instead of wordpress support forum. Support at wordpress is not possible for now.
 
 
 
@@ -62,12 +67,19 @@ Wp-tiger is very easy to install like any other wordpress plugin. No need to edi
 
 This is the basic version. Tested and found works well without any issues.
  
- 
-== Upgrade Notice ==
- 
-= 2.0.0 =
+= 1.1.0 =
 
-Updates are scheduled to release on November 2012.
+ - Important security issue fixed.
+ - Widget Design issue fixed.
+ - Updated post method type.
+ - No need to configure success / failure urls in vtiger.
+ - Added success / failure messages in wp itself.
+
+== Upgrade Notice ==
+
+v1.0.0 Initial release
+
+v1.1.0 Must upgrade. Important security issue fix and major modifications.
 
 
 == Frequently Asked Questions ==
@@ -81,7 +93,7 @@ Updates are scheduled to release on November 2012.
 3. How to get vtiger crm Application key?
    You can get the application key from the vtiger crm config.inc.php file from the root.
 
-4. How to configure success/failure message?
-   To get success/failure result, you need to add success and failure url's in vtiger "modules/Webforms/Webforms.config.php" file. Otherwise a error page may appear on failure.
 
-Please use support section in wordpress itself for any further queries and feature request.
+For quick response and reply please create issues in our [support](http://code.smackcoders.com/wptiger/issues) instead of wordpress support forum.
+Support at wordpress is not possible for now.
+

@@ -11,18 +11,6 @@ add_shortcode('display_widget_area','display_widget');
 
 function display_page($atts)
 {
-if(isset($_GET['result']))
-{
-	if($_GET['result']=="success")
-	{
-		echo "<h3>Your contact Successfully added</h3>";
-	}
-	elseif($_GET['result']=="failure")
-	{
-		echo "<h3>Error in adding your contact</h3>";
-	}
-}
-
 $config = get_option("smack_vtlc_settings");
 $config_field = get_option("smack_vtlc_field_settings");
 $config_widget_field = get_option("smack_vtlc_widget_field_settings");
@@ -36,7 +24,8 @@ if(!empty($config['hostname']) && !empty($config['dbuser'])){
 }
 
 $action=trim($config['url'], "/").'/modules/Webforms/post.php';
-$content = "<form id='contactform' method='post' action='".$action."'>";
+$content = "<form id='contactform' name='contactform' method='post'>";
+//$content = "<form id='contactform' name='contactform' method='post' action='".$action."'>";
 $content.= "<table>";
 	if( is_array( $config_field['fieldlist'] ) ) foreach ($selectedFields as $field) {
 
@@ -57,29 +46,47 @@ $content.=$content1;
 	}
 	$content.="<tr><td></td><td>";
 	$content.="<p>";
-	$content.="<input type='submit' value='Submit' id='submit' name='submit'></p>";
-	if(!empty( $config['appkey'] )){
-	$content.="<input type='hidden' value='".$config['appkey']."' name='appKey' />";
-	}
-	$content.="</td></tr></table>";
+	$content.="<input type='submit' value='Submit' id='submit' name='submit'></p><span style='font-size:11px;'>Powered by <a target='_blank' href='https://code.smackcoders.com/wptiger'>Wp-Tiger</a></td></tr></table>";
+        $content.="<input type='hidden' value='contactform' name='page_contactform'>";
 	$content.="<input type='hidden' value='Leads' name='moduleName' />
 </form>";
-echo $content;
+//return $content;
+
+if($_REQUEST['page_contactform'])
+{
+	extract($_POST);
+
+	foreach($_POST as $field => $value)
+	{
+		$post_fields[$field]=urlencode($value);
+	}
+	if(!empty( $config['appkey'] )){
+		$post_fields['appKey'] = $config['appkey'];	
+	}
+	foreach($post_fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
+	rtrim($fields_string,'&');
+	$url = $action;
+	$ch  = curl_init ($url);
+	curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+	curl_setopt($ch, CURLOPT_POST,1);
+	curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+	$data = curl_exec ($ch);
+	curl_close ($ch);
+	if($data) {
+		if(preg_match("/$module entry is added to vtiger CRM./",$data)) {
+			$content.= "success full";
+		} else{
+			$content.= "failed";
+		}
+	}
+
+}
+return $content;
 }
 
 function display_widget($atts)
 {
-if(isset($_GET['result']))
-{
-	if($_GET['result']=="success")
-	{
-		echo "<h3>Your contact Successfully added</h3>";
-	}
-	elseif($_GET['result']=="failure")
-	{
-		echo "<h3>Error in adding your contact</h3>";
-	}
-}
 $config = get_option("smack_vtlc_settings");
 $config_field = get_option("smack_vtlc_field_settings");
 $config_widget_field = get_option("smack_vtlc_widget_field_settings");
@@ -93,7 +100,7 @@ if(!empty($config['hostname']) && !empty($config['dbuser'])){
 }
 
 $action=trim($config['url'], "/").'/modules/Webforms/post.php';
-$content = "<form id='contactform' method='post' action='".$action."'>";
+$content = "<form id='contactform' method='post'>";
 $content.= "<table>";
 	if( is_array( $config_widget_field['widgetfieldlist'] ) ) foreach ($selectedFields as $field) {
 
@@ -109,19 +116,49 @@ $content.= "<table>";
 		$content1.="<input type='hidden' value='".$typeofdata[1]."' id='".$field->fieldname."_type'>";
 		$content1.="<input type='text' style=' border: 1px solid #CCCCCC; background-color: #FFFFFF; color: #000000; font: 10px verdana,sans-serif;padding: 3px 5px; width: 176px;' size='20' value='' name='".$field->fieldname."' id='".$field->fieldname."'></p>";
 		$content1.="</td></tr>";
-
 $content.=$content1;
 	}
 	$content.="<tr><td></td><td>";
 	$content.="<p>";
-	$content.="<input type='submit' style='background: none repeat scroll 0 0 #E3E3DB; border-color: #FFFFFF #D8D8D0 #D8D8D0 #FFFFFF; border-style: solid; border-width: 2px; color: #000000; font-family: Arial,Helvetica,sans-serif; font-size: 10px; font-weight: bold; margin-left: 0; text-decoration: none; text-transform: uppercase;' value='Submit' id='submit' name='submit'></p>";
-	if(!empty( $config['appkey'] )){
-	$content.="<input type='hidden' value='".$config['appkey']."' name='appKey' />";
-	}
-	$content.="</td></tr></table>";
-	$content.="<input type='hidden' value='Leads' name='moduleName' />
+	$content.="<input type='submit' style='background: none repeat scroll 0 0 #E3E3DB; border-color: #FFFFFF #D8D8D0 #D8D8D0 #FFFFFF; border-style: solid; border-width: 2px; color: #000000; font-family: Arial,Helvetica,sans-serif; font-size: 10px; font-weight: bold; margin-left: 0; text-decoration: none; text-transform: uppercase;' value='Submit' id='submit' name='submit'></p></td></tr>";
+	$content.="<tr><td></td><td style='font-size:9px;'>Powered by <a target='_blank' href='https://code.smackcoders.com/wptiger'>Wp-Tiger</a></td></tr></table>";
+	$content.="<input type='hidden' value='contactform' name='widget_contactform'>";
+	$content.="<input type='hidden' value='Leads' name='moduleName'/>
 </form>";
 
-echo $content;
+//echo $content;
+if($_REQUEST['widget_contactform'])
+{
+        extract($_POST);
+
+        foreach($_POST as $field => $value)
+        {
+                $post_fields[$field]=urlencode($value);
+        }
+        if(!empty( $config['appkey'] )){
+                $post_fields['appKey'] = $config['appkey'];
+        }
+
+        foreach($post_fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
+        rtrim($fields_string,'&');
+        $url = $action;
+        $ch  = curl_init ($url);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        curl_setopt($ch, CURLOPT_POST,1);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        $data = curl_exec ($ch);
+        curl_close ($ch);
+        if($data) {
+                if(preg_match("/$module entry is added to vtiger CRM./",$data)) {
+                        $content.= "success full";
+                } else{
+                        $content.= "failed";
+                }
+        }
+
+}
+return $content;
+
 }
 ?>
