@@ -77,9 +77,9 @@ This is the basic version. Tested and found works well without any issues.
 
 == Upgrade Notice ==
 
-v1.0.0 Initial release
+=v 1.0.0=	 Initial release
 
-v1.1.0 Must upgrade. Important security issue fix and major modifications.
+=v 1.1.0=	 Must upgrade. Important security issue fix and major modifications.
 
 
 == Frequently Asked Questions ==

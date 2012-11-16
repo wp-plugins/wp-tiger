@@ -3,7 +3,7 @@
 Plugin Name: Wordpress vTiger crm Lead Capture
 Plugin URI: http://www.smackcoders.com
 Description: A plugin that Captures the lead for vtigercrm
-Version: 1.0.0
+Version: 1.1.0
 Author: smackcoders.com
 Author URI: http://www.smackcoders.com
 */
