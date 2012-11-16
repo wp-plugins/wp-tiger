@@ -62,11 +62,7 @@ Wp-tiger is very easy to install like any other wordpress plugin. No need to edi
 5. The screenshot-5.png shows the form placed in widget area, which captures the vtiger leads.
  
 == Changelog ==
- 
-= 1.0.0 =
 
-This is the basic version. Tested and found works well without any issues.
- 
 = 1.1.0 =
 
  - Important security issue fixed.
@@ -74,12 +70,19 @@ This is the basic version. Tested and found works well without any issues.
  - Updated post method type.
  - No need to configure success / failure urls in vtiger.
  - Added success / failure messages in wp itself.
+ 
+= 1.0.0 =
+
+This is the basic version. Tested and found works well without any issues.
+ 
+
 
 == Upgrade Notice ==
 
+=v 1.1.0=	 Must upgrade. Important security issue fix and major modifications.
+
 =v 1.0.0=	 Initial release
 
-=v 1.1.0=	 Must upgrade. Important security issue fix and major modifications.
 
 
 == Frequently Asked Questions ==
