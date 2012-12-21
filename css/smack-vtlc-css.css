@@ -21,6 +21,11 @@ form.left-side-content
 	float:left;
 }
 
+#smack_vtlc_field_form
+{
+	width:525px;
+	float:left;
+}
 
 input.wp-tiger-widget-area-text
 {
