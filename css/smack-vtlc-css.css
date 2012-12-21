@@ -1,0 +1,47 @@
+td.smack_settings_td_label
+{
+	width:150px;
+}
+
+input.smack_settings_input_text
+{
+	width:300px;
+}
+
+div.right-side-content
+{
+    float: right;
+    padding-right: 20px;
+    width: 450px;
+}
+
+form.left-side-content
+{
+	width:525px;
+	float:left;
+}
+
+
+input.wp-tiger-widget-area-text
+{
+	border: 1px solid #CCCCCC;
+	background-color: #FFFFFF;
+	color: #000000;
+	font: 10px verdana,sans-serif;
+	padding: 3px 5px;
+	width: 176px;
+}
+
+.wp-tiger-widget-area-submit
+{
+	background: none repeat scroll 0 0 #E3E3DB; 
+	border-color: #FFFFFF #D8D8D0 #D8D8D0 #FFFFFF;
+	border-style: solid; border-width: 2px;
+	color: #000000;
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	margin-left: 0;
+	text-decoration: none;
+	text-transform: uppercase;
+}
