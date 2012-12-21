@@ -22,6 +22,10 @@ else
 }
 ?>
 <?php 
+
+$topContent = topContent();
+echo $topContent;
+
 if(isset($_POST['field_posted']))
 {
 	$config_field['fieldlist'] = array();
@@ -35,12 +39,14 @@ if(isset($_POST['field_posted']))
 		$config_field['fieldlist'] = $fieldArr;
 	}
 	update_option('smack_vtlc_field_settings', $config_field);
+
 	settings_saved('<br/>Please paste the below short code at the page you want to display the contact form<br/><h3>[display_contact_page]</h3>');
+
 
 }
 ?>
 	<form id="smack_vtlc_field_form"
-	action="<?php echo $_SERVER['REQUEST_URI']; ?>"
+	action="<?php echo $_SERVER['REQUEST_URI']; ?>" onsubmit="return smack_validate_Fields()"
 	method="post">
 <?php
 	if( !empty($config['hostname']) && !empty($config['dbuser']) ){
@@ -83,11 +89,13 @@ if(isset($_POST['field_posted']))
 										<input type="hidden" value="<?php echo $typeofdata[1];?>" id="field_type<?php echo $key;?>" >
 										<input type="hidden" name="smack_vtlc_field_hidden<?php echo $key;?>" value="<?php echo $field->fieldid ;?>" />
 										
-										<?php if( in_array($field->fieldid, $config_field['fieldlist']) )
+										<?php 
+
+										if( in_array($field->fieldid, $config_field['fieldlist']) )
 											$checked='checked="checked"';
 										else 
 											$checked = "";
-											?>
+										?>
 										<input type="checkbox" value="<?php echo $field->fieldname;?>" id="smack_vtlc_field<?php echo $key;?>" name="smack_vtlc_field<?php echo $key;?>" <?php echo $checked;?>>
 									</td>
 								</tr>
@@ -98,13 +106,15 @@ if(isset($_POST['field_posted']))
 				</tbody>
 			</table>
 			<p class="submit">
-				<input type="submit" value="<?php  _e('Save Field Settings'); ?>" class="button-primary" name="Submit" onclick="smack_validateFields()">
+			Please paste the below short code at the widget area you want to display the contact form<h3>[display_contact_page]</h3>
+				<input type="submit" value="<?php  _e('Save Field Settings'); ?>" class="button-primary" name="Submit" >
 			</p>
-	<input type="hidden" name="field_posted" value="<?php echo 'posted';?>">
+	<input type="hidden" name="field_posted" value="<?php echo 'posted';?>" />
 
 	</form>
 	<?php } else{
 		_e("Please enter a valid database setting");
 	}
-	die();
+$content = rightSideContent();
+echo $content;
 }?>

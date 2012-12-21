@@ -65,6 +65,7 @@ if($_REQUEST['page_contactform'])
 	}
 	foreach($post_fields as $key=>$value) { $fields_string .= $key.'='.$value.'&'; }
 	rtrim($fields_string,'&');
+
 	$url = $action;
 	$ch  = curl_init ($url);
 	curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
@@ -74,8 +75,9 @@ if($_REQUEST['page_contactform'])
 	$data = curl_exec ($ch);
 	curl_close ($ch);
 	if($data) {
+		//$content.= $data;   //remove the comment to see the result from vtiger.
 		if(preg_match("/$module entry is added to vtiger CRM./",$data)) {
-			$content.= "success full";
+			$content.= "successful";
 		} else{
 			$content.= "failed";
 		}
@@ -114,13 +116,13 @@ $content.= "<table>";
 		}
 		$content1.="</td><td>";
 		$content1.="<input type='hidden' value='".$typeofdata[1]."' id='".$field->fieldname."_type'>";
-		$content1.="<input type='text' style=' border: 1px solid #CCCCCC; background-color: #FFFFFF; color: #000000; font: 10px verdana,sans-serif;padding: 3px 5px; width: 176px;' size='20' value='' name='".$field->fieldname."' id='".$field->fieldname."'></p>";
+		$content1.="<input type='text' class='wp-tiger-widget-area-text' size='20' value='' name='".$field->fieldname."' id='".$field->fieldname."'></p>";
 		$content1.="</td></tr>";
 $content.=$content1;
 	}
 	$content.="<tr><td></td><td>";
 	$content.="<p>";
-	$content.="<input type='submit' style='background: none repeat scroll 0 0 #E3E3DB; border-color: #FFFFFF #D8D8D0 #D8D8D0 #FFFFFF; border-style: solid; border-width: 2px; color: #000000; font-family: Arial,Helvetica,sans-serif; font-size: 10px; font-weight: bold; margin-left: 0; text-decoration: none; text-transform: uppercase;' value='Submit' id='submit' name='submit'></p></td></tr>";
+	$content.="<input type='submit' class='wp-tiger-widget-area-submit' value='Submit' id='submit' name='submit'></p></td></tr>";
 	$content.="<tr><td></td><td style='font-size:9px;'>Powered by <a target='_blank' href='https://code.smackcoders.com/wptiger'>Wp-Tiger</a></td></tr></table>";
 	$content.="<input type='hidden' value='contactform' name='widget_contactform'>";
 	$content.="<input type='hidden' value='Leads' name='moduleName'/>
@@ -150,8 +152,9 @@ if($_REQUEST['widget_contactform'])
         $data = curl_exec ($ch);
         curl_close ($ch);
         if($data) {
+		//$content.= $data;   //remove the comment to see the result from vtiger.
                 if(preg_match("/$module entry is added to vtiger CRM./",$data)) {
-                        $content.= "success full";
+                        $content.= "successful";
                 } else{
                         $content.= "failed";
                 }

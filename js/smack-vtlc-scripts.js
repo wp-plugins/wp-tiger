@@ -1,4 +1,4 @@
-function smack_validateFields() {
+function smack_validate_Fields() {
 	var no_of_fields = jQuery('#no_of_vt_fields').val();
 	for ( var i = 0; i < no_of_fields; i++ ) {
 		if( jQuery('#field_type'+i).val() == 'M' && !jQuery('#smack_vtlc_field'+i).is(':checked') ) {
@@ -11,3 +11,40 @@ function smack_validateFields() {
 	}
 	return true;
 }
+
+function captureAlreadyRegisteredUsersWpTiger()
+{
+	document.getElementById('please-upgrade').style.fontSize = "14px";
+	document.getElementById('please-upgrade').style.fontFamily = "Sans Serif";
+	document.getElementById('please-upgrade').style.color = "red";
+	document.getElementById('please-upgrade').innerHTML = "Please Upgrade to wp-tiger-pro for Sync feature";
+}
+
+function testDatabaseCredentials(siteurl)
+{
+	var data="";
+	data+= "hostname="+jQuery("#hostname").val();
+	data+= "&dbuser="+jQuery("#dbuser").val();
+	data+= "&dbpass="+jQuery("#dbpass").val();
+	data+= "&dbname="+jQuery("#dbname").val();
+	data+= "&check=checkdatabase";
+	jQuery.ajax({
+                url: siteurl+'/wp-content/plugins/wp-tiger/test-access.php',
+                type: 'post',
+                data: data,
+                success: function(response){
+       			if(response == 'Success')
+			{
+				document.getElementById('smack-database-test-results').style.color = "green";
+				document.getElementById('smack-database-test-results').innerHTML = "Database Credentials are ok";
+			}
+			else
+			{
+				document.getElementById('smack-database-test-results').style.fontWeight = "bold";
+				document.getElementById('smack-database-test-results').style.color = "red";
+				document.getElementById('smack-database-test-results').innerHTML = "Database Credentials are wrong";
+			}
+                }
+        });
+}
+
