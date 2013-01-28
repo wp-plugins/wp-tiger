@@ -47,14 +47,9 @@ For quick response and reply please create issues in our [support](http://code.s
 
 
 == Installation ==
+ Please click here for [Detailed Installation Instructions](http://www.smackcoders.com/blog/category/free-wordpress-plugins/wp-vtiger/)
+
  
-Wp-tiger is very easy to install like any other wordpress plugin. No need to edit or modify anything here.
-
-1.    Unzip the file 'wp-tiger.zip'.
-2.    Upload the ' wp-tiger ' directory to '/wp-content/plugins/' directory using ftp client or upload and install wp-tiger.zip through plugin install  wizard in wp admin panel.
-3.    Activate the plugin through the 'Plugins' menu in WordPress.
-4.    After activating, you will see an option for 'wp-tiger' in the admin menu (left navigation).
-
 == Screenshots ==
 
 1. The screenshot-1.png shows the vtiger settings configuration
@@ -94,44 +89,8 @@ v1.0.0 Initial release.
 
 == Frequently Asked Questions ==
 
-1. Why wp tiger free?
+Please click here for [ Detailed Frequently Asked Questions](http://www.smackcoders.com/blog/category/free-wordpress-plugins/wp-vtiger/)
 
-   This plugin helps you to capture leads using a from or widget directy to your vtiger crm. Also you can optionally catch or sync from wp members database to vtiger.
-
-
-2. How to install wp-tiger?
-
-   Like other plugins wp-tiger is easy to install. Upload the wp-tiger.zip file through plugin install page through wp admin. Everything will work fine with it.
-
-
-32. How to configure wp-tiger?
-
-   In plugin settings provide your vtiger crm db host name, db credentials, url path and Application key. Save it will redirect to form fields tab.
-
-
-4. How to get vtiger crm Application key?
-
-   You can get the application key from the vtiger crm config.inc.php file from the root.
-
-   
-5. How to create form in a page/post?
-
-   After settings are configured, go to form fields menu. Choose the fields to display and save. Now you can copy & paste the shortcode [display_contact_page] in any page/post.
-
-
-6. How to create form for widget?
-
-   Go to widget fields menu. Choose the fields to display and save. Now you can copy & paste the shortcode [display_widget_area] for widget in any page/post.
-
-
-7. Why i am getting "Failed to add entry in to vtiger CRM. Error Code: INVALID_USER_CREDENTIALS, Error Message: Invalid username or password"?
-
-   This is because the access key is not same in Webforms.config.php as in my preferences. You need to get the correct access key from vtiger My preferences and replace it in "yourvtiger/modules/Webforms/Webforms.config.php".
-
-
-8. How member capturing works?
-
-   By default email, first name and last name are captured if available. In case of default wp member, last name will be username with email is captured as lead. This works well with any membership plugin. No even to worry about what type of member plugin are used.
 
 
 For quick response and reply please create issues in our [support](http://code.smackcoders.com/wptiger/issues) instead of wordpress support forum.
