@@ -2,7 +2,7 @@
 Contributors: Smackcoders
 Tags: crm, admin, administration, automatic, contact, form, list, newsletter, plugin, shortcode, sidebar, widget, widgets, wordpress, crm, vtiger, lead, wptiger
 Requires at least: 3.1
-Tested up to: 3.4.2
+Tested up to: 3.5.2
 Stable tag: 2.0.0
 Version: 2.0.0
 Author: [Smackcoders](http://profiles.wordpress.org/smackcoders/)
