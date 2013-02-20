@@ -45,6 +45,7 @@ if(isset($_POST['field_posted']))
 
 }
 ?>
+	<div class="left-side-content">
 	<form id="smack_vtlc_field_form"
 	action="<?php echo $_SERVER['REQUEST_URI']; ?>" onsubmit="return smack_validate_Fields()"
 	method="post">
@@ -112,6 +113,7 @@ if(isset($_POST['field_posted']))
 	<input type="hidden" name="field_posted" value="<?php echo 'posted';?>" />
 
 	</form>
+	</div>
 	<?php } else{
 		_e("Please enter a valid database setting");
 	}

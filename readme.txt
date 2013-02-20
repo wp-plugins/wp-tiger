@@ -1,39 +1,43 @@
-=== Wordpress vTiger CRM Lead Capture Plugin ===
+=== WordPress VtigerCRM Lead/Contact Capture Plugin ===
 Contributors: Smackcoders
 Tags: crm, admin, administration, automatic, contact, form, list, newsletter, plugin, shortcode, sidebar, widget, widgets, wordpress, crm, vtiger, lead, wptiger
 Requires at least: 3.1
 Tested up to: 3.5.1
-Stable tag: 2.0.0
-Version: 2.0.0
+Stable tag: 2.1.0
+Version: 2.1.0
 Author: [Smackcoders](http://profiles.wordpress.org/smackcoders/)
 Donate link: http://www.smackcoders.com/donate.html
 License: GPLv2 or later
  
-An easy to use plugin integrates Word Press contact form with vtigerCRM.
+An easy to use plugin integrates WordPress contact form with VtigerCRM.
 
 == Description ==
 
-Wp-tiger plugin helps to easily capture leads to vtigerCRM from your word press through a contact form. Short code can used in page, post and separate short code for widgets as well.
+WP-Tiger plugin helps to easily capture leads to VtigerCRM from your word press through a contact form. Short code can used in page, post and separate short code for widgets as well.
 
 **Features**
  
-*    Admin can fetch vtigerCRM lead/contact fields directly to wordpress forms.
-*    Options to enable/disable and make fields mandatory.
+*    Admin can fetch VtigerCRM lead fields directly into WordPress forms.
+*    Options to enable/disable fields to displayed in form.
 *    Short code to integrate form in post / page.
 *    Separate short code to integrate form even as widget in sidebar.
-*    Capture WP members to vtigerCRM contacts.
+*    Capture newly registered WP members to VtigerCRM contacts.
 
 **In [Pro version](http://store.smackcoders.com/connectors/wp-vtiger-pro.html) you can enjoy most advances features like**
 
-*    Unlike free version, the pro version uses Web services to communicate with vtigerCRM.
-*    Capture both lead and contacts from wordpress to vtigerCRM.
-*    Change the position order of the fields from wp dashboard itself.
+*    Unlike free version, the pro version uses Web services to communicate with VtigerCRM.
+*    Capture both lead and contacts from WordPress to VtigerCRM.
+*    Admin can fetch both VtigerCRM lead/contact fields directly to WordPress forms.
+*    Control Options to enable/disable the visibility of form fields to be displayed
+*    Change the position order of the fields from WordPress dashboard itself.
 *    Change the display label of the fields
-*    Set mandatory fields using wp-tiger pro options.
-*    Add Captcha feature to reduce risk of spam bots.
+*    Set mandatory fields using WP-Tiger Pro options.
+*    Add captcha feature to reduce risk of spam bots.
+*    Short codes to integrate both contact and lead capture form in post/page.
+*    Separate short code to integrate form even as widget in sidebar.
 *    Can generate shortcodes separately for page/post and mini widget forms to accommodate within any theme sidebar. So no design modification needed.
-*    You can sync old registered members to vtigerCRM contacts.
-
+*    Capture new registered WP members directly to VtigerCRM contacts.
+*    You can sync old registered members to VtigerCRM contacts.
 
 **Additional Features for Free Version**
  
@@ -41,28 +45,34 @@ Feel free to request for the new features. Requested features will be added in n
 
 Support and Feature requests. 
 ---------------------------- 
-Please visit http://www.smackcoders.com/category/free-wordpress-plugins/google-seo-author-snippet-plugin.html for guides and tutorials. 
-For quick response and reply please create issues in our [support](http://code.smackcoders.com/wp-tiger/issues) instead of wordpress support forum. Support at wordpress is not possible for now.
+Please visit http://forge.smackcoders.com/projects/wptiger for guides and tutorials. 
+For quick response and reply please create issues in our [support](http://forge.smackcoders.com/projects/wptiger/issues) instead of WordPress support forum. Support at WordPress is not possible for now.
 
 
 
 == Installation ==
- Please click here for [Detailed Installation Instructions](http://www.smackcoders.com/blog/category/free-wordpress-plugins/wp-vtiger/)
+ Please click here for [Detailed Installation Instructions](http://www.smackcoders.com/blog/how-to-guide-free-wordpress-vtiger-lead-capture-plugin.html)
 
  
 == Screenshots ==
 
-1. The screenshot-1.png shows the vtiger settings configuration
-2. The screenshot-2.png shows the vtiger lead fields to be shown in the contact form page or post.
-3. The screenshot-3.png shows the vtiger lead fields to be shown in the widget area.
-4. The screenshot-4.png shows the form which captures the vtiger leads.
-5. The screenshot-5.png shows the form placed in widget area, which captures the vtiger leads.
+1. The screenshot-1.png shows the VtigerCRM settings configuration
+2. The screenshot-2.png shows the VtigerCRM lead fields to be shown in the contact form page or post.
+3. The screenshot-3.png shows the VtigerCRM lead fields to be shown in the widget area.
+4. The screenshot-4.png shows the form which captures the VtigerCRM leads.
+5. The screenshot-5.png shows the form placed in widget area, which captures the VtigerCRM leads.
  
 == Changelog ==
- 
+
+= 2.1.0 =
+
+ - Added more details in readme.
+ - Added donate button.
+ - Css issue fixed.
+
 = 2.0.0 =
 
- - Capture WP members to vtiger contacts
+ - Capture WP members to VtigerCRM contacts
  - Major usability changes and updates to ease the over all process
  
 = 1.1.0 =
@@ -70,8 +80,8 @@ For quick response and reply please create issues in our [support](http://code.s
  - Important security issue fixed.
  - Widget Design issue fixed.
  - Updated post method type.
- - No need to configure success / failure urls in vtiger.
- - Added success / failure messages in wp itself.
+ - No need to configure success / failure urls in VtigerCRM.
+ - Added success / failure messages in WP itself.
 
 = 1.0.0 =
 
@@ -79,6 +89,8 @@ This is the basic version. Tested and found works well without any issues.
 
 
 == Upgrade Notice ==
+
+v2.1.0 Important css issue fix, added more details in readme and added donate button.
 
 v2.0.0 Must upgrade to enjoy new features and usability changes.
 
@@ -89,10 +101,10 @@ v1.0.0 Initial release.
 
 == Frequently Asked Questions ==
 
-Please click here for [ Detailed Frequently Asked Questions](http://www.smackcoders.com/blog/category/free-wordpress-plugins/wp-vtiger/)
+Please click here for [ Detailed Frequently Asked Questions](http://www.smackcoders.com/blog/how-to-guide-free-wordpress-vtiger-lead-capture-plugin.html)
 
 
 
-For quick response and reply please create issues in our [support](http://code.smackcoders.com/wptiger/issues) instead of wordpress support forum.
-Support at wordpress is not possible for now.
+For quick response and reply please create issues in our [support](http://forge.smackcoders.com/projects/wptiger/issues) instead of WordPress support forum.
+Support at WordPress is not possible for now.
 

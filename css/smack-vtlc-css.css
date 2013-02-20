@@ -15,17 +15,19 @@ div.right-side-content
     width: 450px;
 }
 
+div.left-side-content
+{
+    float: left;
+    padding-right: 20px;
+    width: 560px;
+}
+
 form.left-side-content
 {
 	width:525px;
 	float:left;
 }
 
-#smack_vtlc_field_form
-{
-	width:525px;
-	float:left;
-}
 
 input.wp-tiger-widget-area-text
 {

@@ -1,9 +1,9 @@
 <?php 
 /*
-Plugin Name: Wordpress vTiger crm Lead Capture
+Plugin Name: WordPress VtigerCRM Lead/Contact Capture
 Plugin URI: http://www.smackcoders.com
-Description: A plugin that Captures the lead for vtigercrm
-Version: 2.0.0
+Description: A plugin that captures the lead for VtigerCRM
+Version: 2.1.0
 Author: smackcoders.com
 Author URI: http://www.smackcoders.com
 */
@@ -52,11 +52,11 @@ add_action( 'user_register', 'wp_tiger_capture_registering_users' );
 
 function rightSideContent()
 {
-
+$contentUrl = WP_CONTENT_URL;
 $content = "<div class='right-side-content'>
-<p>Wp-tiger plugin helps to easily capture leads to vtigerCRM from your word press through a contact form. Short code can used in page, post and separate short code for widgets as well.</p> 
+<p>Wp-tiger plugin helps to easily capture leads to VtigerCRM from your WordPress through a contact form. Short code can used in page, post and separate short code for widgets as well.</p> 
 <p>
-*    Admin can fetch vtigerCRM lead/contact fields directly to wordpress forms.
+*    Admin can fetch VtigerCRM lead/contact fields directly to WordPress forms.
 </p>
 <p>
 *    Options to enable/disable.
@@ -68,29 +68,29 @@ $content = "<div class='right-side-content'>
 *    Separate short code to integrate form even as widget in sidebar.
 </p>
 <p>
-*    Captures WP members to vtigerCRM Contacts.
+*    Captures WP members to VtigerCRM Contacts.
 </p>
 <p>Configuring our plugin is as simple as that. If you have any questions, issues and request on new features, plaese visit <a href='http://www.smackcoders.com/category/free-wordpress-plugins.html' target='_blank'>Smackcoders.com Blog </a></p>
 
 <p style = 'color:#FC0000;'>
- Important Note : Access key of vtiger My preferences and \"yourvtiger/modules/Webforms/Webforms.config.php\" should be same. If not please update it in Webforms.config.php.
+ Important Note : Access key of VtigerCRM My preferences and \"yourvtiger/modules/Webforms/Webforms.config.php\" should be same. If not please update it in Webforms.config.php.
 </p>
 <div>
 <p style='font-size:14px; font-weight:bold; '><a href='http://store.smackcoders.com/connectors/wp-vtiger-pro.html'>Pro version</a> (wp-tiger-pro) Features</p>
 
-<p>*    Unlike free version, the pro version uses Web services to communicate with vtigerCRM.</p>
-<p>*    Capture both lead and contacts from wordpress to vtigerCRM.</p>
+<p>*    Unlike free version, the pro version uses Web services to communicate with VtigerCRM.</p>
+<p>*    Capture both lead and contacts from WordPress to VtigerCRM.</p>
 <p>*    Change the position order of the fields from wp dashboard itself.</p>
 <p>*    Change the display label of the fields</p>
 <p>*    Set mandatory fields using wp-tiger pro options.</p>
 <p>*    Add Captcha feature to reduce risk of spam bots.</p>
 <p>*    Can generate shortcodes separately for page/post and mini widget forms to accommodate within any theme sidebar. So no design modification needed.</p>
-<p>*    Capture WP members to vtigerCRM contacts.</p>
-<p>*    Syncs already registered users to vtigerCRM contacts.</p>
+<p>*    Capture WP members to VtigerCRM contacts.</p>
+<p>*    Syncs already registered users to VtigerCRM contacts.</p>
 <p>To upgrade to pro version contact us at <a href='mailto:sales@smackcoders.com'>sales@smackcoders.com</a></p>
 </div>
 
-	<div align='center' style='margin-top:40px;'> 'While the scripts on this site are free, donations are greatly appreciated. '<br/><br/><a href='https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=fenzik@gmail.com&lc=JP&item_name=WordPress%20Plugins&item_number=wp%2dplugins&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted' target='_blank'><img src='".site_url()."/wp-content/plugins/wp-ultimate-csv-importer/images/paypal_donate_button.png' /></a><br/><br/><a href='http://www.smackcoders.com/' target='_blank'><img src='http://www.smackcoders.com/wp-content/uploads/2012/09/Smack_poweredby_200.png'></a>
+	<div align='center' style='margin-top:40px;'> 'While the scripts on this site are free, donations are greatly appreciated. '<br/><br/><a href='https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=fenzik@gmail.com&lc=JP&item_name=WordPress%20Plugins&item_number=wp%2dplugins&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted' target='_blank'><img src='$contentUrl/plugins/wp-tiger/images/paypal_donate_button.png' /></a><br/><br/><a href='http://www.smackcoders.com/' target='_blank'><img src='http://www.smackcoders.com/wp-content/uploads/2012/09/Smack_poweredby_200.png'></a>
 	</div><br/>
 </div>
 ";
