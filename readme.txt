@@ -3,8 +3,8 @@ Contributors: Smackcoders
 Tags: crm, admin, administration, automatic, contact, form, list, newsletter, plugin, shortcode, sidebar, widget, widgets, wordpress, crm, vtiger, lead, wptiger
 Requires at least: 3.1
 Tested up to: 3.5.1
-Stable tag: 2.1.0
-Version: 2.1.0
+Stable tag: 2.5.0
+Version: 2.5.0
 Author: [Smackcoders](http://profiles.wordpress.org/smackcoders/)
 Donate link: http://www.smackcoders.com/donate.html
 License: GPLv2 or later
@@ -23,7 +23,7 @@ WP-Tiger plugin helps to easily capture leads to VtigerCRM from your word press 
 *    Separate short code to integrate form even as widget in sidebar.
 *    Capture newly registered WP members to VtigerCRM contacts.
 
-**In [Pro version](http://store.smackcoders.com/connectors/wp-vtiger-pro.html) you can enjoy most advances features like**
+**In [Pro version](http://smackcoders.com/wp-vtiger-pro.html) you can enjoy most advances features like**
 
 *    Unlike free version, the pro version uses Web services to communicate with VtigerCRM.
 *    Capture both lead and contacts from WordPress to VtigerCRM.
@@ -64,6 +64,11 @@ For quick response and reply please create issues in our [support](http://forge.
  
 == Changelog ==
 
+= 2.5.0 =
+ - Fixed the Javascript Errors.
+ - Updated to WordPress-3.5.1 compatibility.
+ - Plugin icon added.
+
 = 2.1.0 =
 
  - Added more details in readme.
@@ -89,6 +94,8 @@ This is the basic version. Tested and found works well without any issues.
 
 
 == Upgrade Notice ==
+
+v2.5.0 Must upgrade to enjoy with WordPress-3.5.1 compatibilty.
 
 v2.1.0 Important css issue fix, added more details in readme and added donate button.
 

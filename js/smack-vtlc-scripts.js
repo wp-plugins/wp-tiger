@@ -17,7 +17,7 @@ function captureAlreadyRegisteredUsersWpTiger()
 	document.getElementById('please-upgrade').style.fontSize = "14px";
 	document.getElementById('please-upgrade').style.fontFamily = "Sans Serif";
 	document.getElementById('please-upgrade').style.color = "red";
-	document.getElementById('please-upgrade').innerHTML = "Please Upgrade to wp-tiger-pro for Sync feature";
+	document.getElementById('please-upgrade').innerHTML = "Please Upgrade to WP-Tiger-Pro for Sync feature";
 }
 
 function testDatabaseCredentials(siteurl)
@@ -35,8 +35,9 @@ function testDatabaseCredentials(siteurl)
                 success: function(response){
        			if(response == 'Success')
 			{
+				document.getElementById('smack-database-test-results').style.fontWeight = "bold";
 				document.getElementById('smack-database-test-results').style.color = "green";
-				document.getElementById('smack-database-test-results').innerHTML = "Database Credentials are ok";
+				document.getElementById('smack-database-test-results').innerHTML = "Database connected successfully";
 			}
 			else
 			{

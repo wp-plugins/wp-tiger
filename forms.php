@@ -37,13 +37,13 @@ else
 ?>
 		<input type="hidden" name="page_options" value="smack_vtlc_settings" />
 		<input type="hidden" name="smack_vtlc_hidden" value="1" />
-<h2>Vtiger Contact Form Settings</h2><br/>
-<h3>DB Settings</h3>
+<h2>VtigerCRM Contact Form Settings</h2><br/>
+<h3>Database settings</h3>
 <div id="dbfields">
 	<table>
 		<tr>
 			<td class="smack_settings_smack_settings_td_label" >
-				<label>Database Host</label>
+				<label>Database hostname</label>
 			</td>
 			<td>
 				<input class="smack_settings_input_text" type="text" id="hostname" name="hostname" value="<?php echo $config['hostname'];?>"/>
@@ -51,7 +51,7 @@ else
 		</tr>
 		<tr>
 			<td class="smack_settings_td_label">
-				<label>Database User</label>
+				<label>Database username</label>
 			</td>
 			<td>
 				<input class="smack_settings_input_text" type="text" id="dbuser" name="dbuser" value="<?php echo $config['dbuser'];?>"/>
@@ -59,7 +59,7 @@ else
 		</tr>
 		<tr>
 			<td class="smack_settings_td_label">
-				<label>Database Password</label>
+				<label>Database password</label>
 			</td>
 			<td>
 				<input class="smack_settings_input_text" type="text" id="dbpass" name="dbpass" value="<?php echo $config['dbpass'];?>"/><br/>
@@ -67,7 +67,7 @@ else
 		</tr>
 		<tr>
 			<td class="smack_settings_td_label">
-				<label>Database Name</label>
+				<label>Database name</label>
 			</td>
 			<td>
 				<input class="smack_settings_input_text" type="text" id="dbname" name="dbname" value="<?php echo $config['dbname'];?>"/>
@@ -78,7 +78,7 @@ else
 <table>
 	<tr>
 		<td class="smack_settings_td_label">
-			<input type="button" class="button" value="Test Database Credentials" onclick="testDatabaseCredentials('<?php echo $siteurl;?>');"/>
+			<input type="button" class="button" value="Test database connection" onclick="testDatabaseCredentials('<?php echo $siteurl;?>');"/>
 		</td>
 		<td id="smack-database-test-results">
 			
@@ -86,7 +86,7 @@ else
 	</tr>
 
 </table>
-<h3>Vtiger Settings</h3>
+<h3>VtigerCRM settings</h3>
 <div id=vtigersettings>
 	<table>
 		<tr>
@@ -107,11 +107,11 @@ else
 		</tr>
 	</table>
 <br/>
-<h3>Capturing Wordpress users</h3>
+<h3>Capturing WordPress users</h3>
 <table>
 	<tr>
 		<td><br/>
-			<label>Do you need to capture the registering users : </label>
+			<label><div style='float:left'>Do you need to capture the registering users</div><div style='float:right;padding-left:5px;'> :</div></label>
 		</td>
 		<td><br/>
 			<input type='checkbox' class='smack-vtiger-settings-user-capture' name='wp_tiger_smack_user_capture' id='wp_tiger_smack_user_capture' 
@@ -126,7 +126,7 @@ if($config['wp_tiger_smack_user_capture']=='on')
 	</tr>
 	<tr>
 		<td>
-			Sync WP members to vTiger Contacts:
+			<div style='float:left'>Sync WP members to VtigerCRM contacts</div><div style='float:right;padding-left:5px;'> :</div>
 		</td>
 		<td>
 			<input type="button" value="<?php _e('Sync');?>" class="button-secondary submit-add-to-menu" onclick="captureAlreadyRegisteredUsersWpTiger();"/>
@@ -139,7 +139,7 @@ if($config['wp_tiger_smack_user_capture']=='on')
 </div>
 <input type="hidden" name="posted" value="<?php echo 'posted';?>">
 		<p class="submit">
-			<input type="submit" value="<?php _e('Save Vtiger Settings');?>" class="button-primary"/>
+			<input type="submit" value="<?php _e('Save Settings');?>" class="button-primary"/>
 		</p>
 		<div id="vt_fields_container">
 		</div>

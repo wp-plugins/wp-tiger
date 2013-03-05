@@ -3,7 +3,7 @@
 Plugin Name: WordPress VtigerCRM Lead/Contact Capture
 Plugin URI: http://www.smackcoders.com
 Description: A plugin that captures the lead for VtigerCRM
-Version: 2.1.0
+Version: 2.5.0
 Author: smackcoders.com
 Author URI: http://www.smackcoders.com
 */
@@ -34,9 +34,10 @@ require_once 'get-vt-fields.php';
 require_once 'widget-fields.php';
 require_once 'smack-vtlc-shortcodes.php';
 require_once 'forms.php';
-function setup_theme_admin_menus() {  
-	add_menu_page('Plugin settings', 'wp-tiger', 'manage_options',  
-	       'plugin_settings', 'plugin_settings_page');
+function setup_theme_admin_menus() { 
+	$contentUrl = WP_CONTENT_URL; 
+	add_menu_page('Plugin settings', 'WP-Tiger', 'manage_options',  
+	       'plugin_settings', 'plugin_settings_page', "$contentUrl/plugins/wp-tiger/images/icon.png");
 	add_submenu_page('plugin_settings',  
 	       'Contact Form Fields', 'Contact Form Fields', 'manage_options',  
 	       'vtiger_db_fields', 'get_Vtiger_DB_Fields');
@@ -54,7 +55,7 @@ function rightSideContent()
 {
 $contentUrl = WP_CONTENT_URL;
 $content = "<div class='right-side-content'>
-<p>Wp-tiger plugin helps to easily capture leads to VtigerCRM from your WordPress through a contact form. Short code can used in page, post and separate short code for widgets as well.</p> 
+<p>WP-Tiger plugin helps to easily capture leads to VtigerCRM from your WordPress through a contact form. Short code can used in page, post and separate short code for widgets as well.</p> 
 <p>
 *    Admin can fetch VtigerCRM lead/contact fields directly to WordPress forms.
 </p>
@@ -70,13 +71,13 @@ $content = "<div class='right-side-content'>
 <p>
 *    Captures WP members to VtigerCRM Contacts.
 </p>
-<p>Configuring our plugin is as simple as that. If you have any questions, issues and request on new features, plaese visit <a href='http://www.smackcoders.com/category/free-wordpress-plugins.html' target='_blank'>Smackcoders.com Blog </a></p>
+<p>Configuring our plugin is as simple as that. If you have any questions, issues and request on new features, plaese visit <a href='http://www.smackcoders.com/blog/category/free-wordpress-plugins' target='_blank'>Smackcoders.com blog </a></p>
 
 <p style = 'color:#FC0000;'>
  Important Note : Access key of VtigerCRM My preferences and \"yourvtiger/modules/Webforms/Webforms.config.php\" should be same. If not please update it in Webforms.config.php.
 </p>
 <div>
-<p style='font-size:14px; font-weight:bold; '><a href='http://store.smackcoders.com/connectors/wp-vtiger-pro.html'>Pro version</a> (wp-tiger-pro) Features</p>
+<p style='font-size:14px; font-weight:bold; '><a href='http://www.smackcoders.com/connectors/wp-vtiger-pro.html' target='_blank'>Pro version</a> (wp-tiger-pro) Features</p>
 
 <p>*    Unlike free version, the pro version uses Web services to communicate with VtigerCRM.</p>
 <p>*    Capture both lead and contacts from WordPress to VtigerCRM.</p>
@@ -102,7 +103,7 @@ return $content;
 
 function topContent()
 {
-	return '<div style="background-color: #FFFFE0;border-color: #E6DB55;border-radius: 3px 3px 3px 3px;border-style: solid;border-width: 1px;margin: 5px 15px 2px; margin-top:15px;padding: 5px;text-align:center"> Please check out <a href="http://smackcoders.com/category/free-wordpress-plugins.html" target="_blank">www.smackcoders.com</a> for the latest news and details of other great plugins and tools. </div><br/>';
+	return '<div style="background-color: #FFFFE0;border-color: #E6DB55;border-radius: 3px 3px 3px 3px;border-style: solid;border-width: 1px;margin: 5px 15px 2px; margin-top:15px;padding: 5px;text-align:center"> Please check out <a href="http://www.smackcoders.com/blog/category/free-wordpress-plugins" target="_blank">www.smackcoders.com</a> for the latest news and details of other great plugins and tools. </div><br/>';
 }
 function wp_tiger_capture_registering_users($user_id)
 {
@@ -138,9 +139,9 @@ function wp_tiger_capture_registering_users($user_id)
 
 		if($data) {
 		        if(preg_match("/$module entry is added to vtiger CRM./",$data)) {
-		                $content= "successful";
+		                $content= "<span style='color:green'>Thank you for submitting</span>";
 		        } else{
-		                $content= "failed";
+		                $content= "<span style='color:red'>Submitting Failed</span>";
 		        }
 		}
 	// firstname  lastname  email
