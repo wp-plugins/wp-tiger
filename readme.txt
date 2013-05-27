@@ -1,11 +1,11 @@
 === WordPress VtigerCRM Lead/Contact Capture Plugin ===
-Contributors: Smackcoders
+Contributors: smackcoders
 Tags: crm, admin, administration, automatic, contact, form, list, newsletter, plugin, shortcode, sidebar, widget, widgets, wordpress, crm, vtiger, lead, wptiger
 Requires at least: 3.1
 Tested up to: 3.5.1
 Stable tag: 2.5.0
 Version: 2.5.0
-Author: [Smackcoders](http://profiles.wordpress.org/smackcoders/)
+Author: smackcoders
 Donate link: http://www.smackcoders.com/donate.html
 License: GPLv2 or later
  
