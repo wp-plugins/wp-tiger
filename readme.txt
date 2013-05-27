@@ -1,11 +1,11 @@
 === WordPress VtigerCRM Lead/Contact Capture Plugin ===
-Contributors: Smackcoders
+Contributors: smackcoders
 Tags: crm, admin, administration, automatic, contact, form, list, newsletter, plugin, shortcode, sidebar, widget, widgets, wordpress, crm, vtiger, lead, wptiger
 Requires at least: 3.1
 Tested up to: 3.5.1
 Stable tag: 2.5.0
 Version: 2.5.0
-Author: [Smackcoders](http://profiles.wordpress.org/smackcoders/)
+Author: smackcoders
 Donate link: http://www.smackcoders.com/donate.html
 License: GPLv2 or later
  
@@ -38,6 +38,17 @@ WP-Tiger plugin helps to easily capture leads to VtigerCRM from your word press 
 *    Can generate shortcodes separately for page/post and mini widget forms to accommodate within any theme sidebar. So no design modification needed.
 *    Capture new registered WP members directly to VtigerCRM contacts.
 *    You can sync old registered members to VtigerCRM contacts.
+
+How To Install WP Tiger Free plugin version 2.5.0 in wordpress 3.5 and above through wordpress plugin install?
+This video guides you step by step to Install WP Tiger Free plugin version 2.5.0 in wordpress 3.5 and above through wordpress plugin install. 
+<p>http://www.youtube.com/watch?v=-Gmzb6_5Vf0</p>
+
+This video guides you step by step to 
+1. How To Configure WP Tiger Free plugin version 2.5.0 in wordpress 3.5 and above through wordpress plugin install?
+2. How to create web forms in wordpress to capture leads directly to vtiger leads module? How to fetch vtiger lead fields to generate a form in wordpress?
+3. How to enable, disable, reorder, rename and make mandatory of fields from wordpress plugin UI without changing in vtiger?
+<p>http://www.youtube.com/watch?v=lX0evNGL5tc</p>
+
 
 **Additional Features for Free Version**
  
@@ -108,7 +119,18 @@ v1.0.0 Initial release.
 
 == Frequently Asked Questions ==
 
+How To Install WP Tiger Free plugin version 2.5.0 in wordpress 3.5 and above through wordpress plugin install?
+This video guides you step by step to Install WP Tiger Free plugin version 2.5.0 in wordpress 3.5 and above through wordpress plugin install. 
+<p>http://www.youtube.com/watch?v=-Gmzb6_5Vf0</p>
+
+This video guides you step by step to 
+1. How To Configure WP Tiger Free plugin version 2.5.0 in wordpress 3.5 and above through wordpress plugin install?
+2. How to create web forms in wordpress to capture leads directly to vtiger leads module? How to fetch vtiger lead fields to generate a form in wordpress?
+3. How to enable, disable, reorder, rename and make mandatory of fields from wordpress plugin UI without changing in vtiger?
+<p>http://www.youtube.com/watch?v=lX0evNGL5tc</p>
+
 Please click here for [ Detailed Frequently Asked Questions](http://www.smackcoders.com/blog/how-to-guide-free-wordpress-vtiger-lead-capture-plugin.html)
+
 
 
 
