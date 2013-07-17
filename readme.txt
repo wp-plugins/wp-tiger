@@ -1,10 +1,10 @@
 === Easy Lead capture Vtiger Webforms and Contacts synchronization ===
 Contributors: smackcoders
 Tags: crm, admin, administration, automatic, contact, form, list, newsletter, plugin, shortcode, sidebar, widget, widgets, wordpress, crm, vtiger, lead, wptiger
-Requires at least: 3.1
-Tested up to: 3.5.1
-Stable tag: 2.5.0
-Version: 2.5.0
+Requires at least: 3.4
+Tested up to: 3.5.2
+Stable tag: 3.0.0
+Version: 3.0.0
 Author: smackcoders
 Donate link: http://www.smackcoders.com/donate.html
 License: GPLv2 or later
@@ -101,6 +101,11 @@ For quick response and reply please create issues in our [support](http://forge.
  
 == Changelog ==
 
+= 3.0.0
+ - User Interface changes and improvements
+ - code optimizations
+ - Compatibility test for 3.5.2
+
 = 2.5.0 =
  - Fixed the Javascript Errors.
  - Updated to WordPress-3.5.1 compatibility.
@@ -132,6 +137,8 @@ This is the basic version. Tested and found works well without any issues.
 
 == Upgrade Notice ==
 
+v3.0.0 Highly recomended to upgrade now
+
 v2.5.0 Must upgrade to enjoy with WordPress-3.5.1 compatibilty.
 
 v2.1.0 Important css issue fix, added more details in readme and added donate button.
@@ -141,7 +148,6 @@ v2.0.0 Must upgrade to enjoy new features and usability changes.
 v1.1.0 Must upgrade. Important security issue fix and major modifications.
 
 v1.0.0 Initial release.
-
 
 == Frequently Asked Questions ==
 

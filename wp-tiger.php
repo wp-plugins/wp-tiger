@@ -1,23 +1,31 @@
 <?php 
 /*
-Plugin Name: WordPress VtigerCRM Lead/Contact Capture
-Plugin URI: http://www.smackcoders.com
-Description: A plugin that captures the lead for VtigerCRM
-Version: 2.5.0
-Author: smackcoders.com
-Author URI: http://www.smackcoders.com
+*Plugin Name: WP Tiger
+*Plugin URI: http://www.smackcoders.com
+*Description: Easy Lead capture Vtiger Webforms and Contacts synchronization
+*Version: 3.0.0
+*Author: smackcoders.com
+*Author URI: http://www.smackcoders.com
+*
+* Copyright (C) 2013 Smackcoders (www.smackcoders.com)
+*
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License, version 2, as
+published by the Free Software Foundation.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+*
+* @link http://www.smackcoders.com/blog/category/free-wordpress-plugins
+***********************************************************************************************
 */
-
-
-register_deactivation_hook( __FILE__, 'myplugin_deactivate' );
-
-
-function myplugin_deactivate()
-{
-	delete_option( 'smack_vtlc_settings' );
-	delete_option( 'smack_vtlc_field_settings' );
-	delete_option( 'smack_vtlc_widget_field_settings' );
-}
+require_once (dirname ( __FILE__ ) . '/../../../wp-load.php');
 
 $fieldNames = array(
 		'hostname' => __('Database Host'),
@@ -34,77 +42,75 @@ require_once 'get-vt-fields.php';
 require_once 'widget-fields.php';
 require_once 'smack-vtlc-shortcodes.php';
 require_once 'forms.php';
-function setup_theme_admin_menus() { 
-	$contentUrl = WP_CONTENT_URL; 
-	add_menu_page('Plugin settings', 'WP-Tiger', 'manage_options',  
-	       'plugin_settings', 'plugin_settings_page', "$contentUrl/plugins/wp-tiger/images/icon.png");
-	add_submenu_page('plugin_settings',  
-	       'Contact Form Fields', 'Contact Form Fields', 'manage_options',  
-	       'vtiger_db_fields', 'get_Vtiger_DB_Fields');
-	add_submenu_page('plugin_settings',  
-	       'Widget Area Fields', 'Widget Area Fields', 'manage_options',  
-	       'widget_fields', 'widget_Fields'); 
-}  
-   add_action("admin_menu", "setup_theme_admin_menus");  
+require_once 'navMenu.php';
+require_once 'pro-features.php';
 
-wp_enqueue_script("wp-tiger-script", "/wp-content/plugins/wp-tiger/js/smack-vtlc-scripts.js", array("jquery"));
-wp_enqueue_style("wp-tiger-css", site_url().'/wp-content/plugins/wp-tiger/css/smack-vtlc-css.css');
+add_action ( 'admin_enqueue_scripts', 'LoadWpTigerScript' );
+add_action ( "admin_menu", "wptiger" );
 add_action( 'user_register', 'wp_tiger_capture_registering_users' );
 
-function rightSideContent()
-{
-$contentUrl = WP_CONTENT_URL;
-$content = "<div class='right-side-content'>
-<p>WP-Tiger plugin helps to easily capture leads to VtigerCRM from your WordPress through a contact form. Short code can used in page, post and separate short code for widgets as well.</p> 
-<p>
-*    Admin can fetch VtigerCRM lead/contact fields directly to WordPress forms.
-</p>
-<p>
-*    Options to enable/disable.
-</p>
-<p>
-*    Short code to integrate form in post / page.
-</p>
-<p>
-*    Separate short code to integrate form even as widget in sidebar.
-</p>
-<p>
-*    Captures WP members to VtigerCRM Contacts.
-</p>
-<p>Configuring our plugin is as simple as that. If you have any questions, issues and request on new features, plaese visit <a href='http://www.smackcoders.com/blog/category/free-wordpress-plugins' target='_blank'>Smackcoders.com blog </a></p>
+register_deactivation_hook( __FILE__, 'wptiger_deactivate' );
 
-<p style = 'color:#FC0000;'>
- Important Note : Access key of VtigerCRM My preferences and \"yourvtiger/modules/Webforms/Webforms.config.php\" should be same. If not please update it in Webforms.config.php.
-</p>
-<div>
-<p style='font-size:14px; font-weight:bold; '><a href='http://www.smackcoders.com/connectors/wp-vtiger-pro.html' target='_blank'>Pro version</a> (wp-tiger-pro) Features</p>
-
-<p>*    Unlike free version, the pro version uses Web services to communicate with VtigerCRM.</p>
-<p>*    Capture both lead and contacts from WordPress to VtigerCRM.</p>
-<p>*    Change the position order of the fields from wp dashboard itself.</p>
-<p>*    Change the display label of the fields</p>
-<p>*    Set mandatory fields using wp-tiger pro options.</p>
-<p>*    Add Captcha feature to reduce risk of spam bots.</p>
-<p>*    Can generate shortcodes separately for page/post and mini widget forms to accommodate within any theme sidebar. So no design modification needed.</p>
-<p>*    Capture WP members to VtigerCRM contacts.</p>
-<p>*    Syncs already registered users to VtigerCRM contacts.</p>
-<p>To upgrade to pro version contact us at <a href='mailto:sales@smackcoders.com'>sales@smackcoders.com</a></p>
-</div>
-
-	<div align='center' style='margin-top:40px;'> 'While the scripts on this site are free, donations are greatly appreciated. '<br/><br/><a href='https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=fenzik@gmail.com&lc=JP&item_name=WordPress%20Plugins&item_number=wp%2dplugins&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHosted' target='_blank'><img src='$contentUrl/plugins/wp-tiger/images/paypal_donate_button.png' /></a><br/><br/><a href='http://www.smackcoders.com/' target='_blank'><img src='http://www.smackcoders.com/wp-content/uploads/2012/09/Smack_poweredby_200.png'></a>
-	</div><br/>
-</div>
-";
-
-return $content;
-
+// Admin menu settings
+function wptiger() {
+	add_menu_page('WPTiger Settings', 'WP-Tiger', 'manage_options', 'wp-tiger', 'wptiger_settings', WP_CONTENT_URL."/plugins/wp-tiger/images/icon.png");
 }
 
+function LoadWpTigerScript() {
+	wp_enqueue_script("wp-tiger-script", "/wp-content/plugins/wp-tiger/js/smack-vtlc-scripts.js", array("jquery"));
+	wp_enqueue_style("wp-tiger-css", site_url().'/wp-content/plugins/wp-tiger/css/smack-vtlc-css.css');
+}
+
+function wptiger_deactivate()
+{
+	delete_option( 'smack_vtlc_settings' );
+	delete_option( 'smack_vtlc_field_settings' );
+	delete_option( 'smack_vtlc_widget_field_settings' );
+}
+
+function wptiger_settings()
+{
+        echo topContent();
+        $action = getActionWpTiger(); 
+        ?>
+        <div id="main-page">
+                <?php echo topnavmenu(); ?>
+                <div>
+                        <?php $action(); ?>
+                </div>
+        </div>
+        <?php
+}
+
+function wptiger_rightContent(){
+	$rightContent = '<div class="wptiger-plugindetail-box" id="wptiger-pluginDetails"><h3>Plugin Details</h3>
+		<div class="wptiger-box-inside wptiger-plugin-details">
+		<table>	<tbody>
+		<tr><td><b>Plugin Name</b></td><td>WP Tiger</td></tr>
+		<tr><td><b>Version</b></td><td>3.0.0 <a style="text-decoration:none" href="http://www.smackcoders.com/free-wordpress-vtiger-webforms-module.html" target="_blank">( Update Now )</a></td></tr>
+		</tbody></table>
+		<div class="company-detials" id="company-detials">
+		<div class="wptiger-rateus"><img width="70px" height="40px" style="margin-top:10px;" src="'.WP_CONTENT_URL.'/plugins/wp-tiger/images/SubscribeViaEmail.gif"><a style="margin-left:15px;margin-top:-10px;" class="dash-action" target="_blank" href="http://www.smackcoders.com/free-wordpress-vtiger-webforms-module.html">Rate Us</a></div>
+		<div class="sociallinks">
+		<label>Social Links :</label>
+		<span><a target="_blank" href="https://plus.google.com/106094602431590125432"><img src="'.WP_CONTENT_URL.'/plugins/wp-tiger/images/googleplus.png"></a></span>
+		<span><a target="_blank" href="https://www.facebook.com/smackcoders"><img src="'.WP_CONTENT_URL.'/plugins/wp-tiger/images/facebook.png"></a></span>
+		<span><a target="_blank" href="https://twitter.com/smackcoders"><img src="'.WP_CONTENT_URL.'/plugins/wp-tiger/images/twitter.png"></a></span>
+		<span><a target="_blank" href="http://www.linkedin.com/company/smackcoders"><img src="'.WP_CONTENT_URL.'/plugins/wp-tiger/images/linkedin.png"></a></span>
+		</div>
+		<div class="poweredby" id="poweredby"><a target="_blank" href="http://www.smackcoders.com/"><img src="http://www.smackcoders.com/wp-content/uploads/2012/09/Smack_poweredby_200.png"></a></div>
+		</div>
+		</div><!-- end inside div -->
+		</div>';
+		return $rightContent;
+}
 
 function topContent()
-{
-	return '<div style="background-color: #FFFFE0;border-color: #E6DB55;border-radius: 3px 3px 3px 3px;border-style: solid;border-width: 1px;margin: 5px 15px 2px; margin-top:15px;padding: 5px;text-align:center"> Please check out <a href="http://www.smackcoders.com/blog/category/free-wordpress-plugins" target="_blank">www.smackcoders.com</a> for the latest news and details of other great plugins and tools. </div><br/>';
+{ //wptiger_topContent
+	$header_content = '<div style="background-color: #FFFFE0;border-color: #E6DB55;border-radius: 3px 3px 3px 3px;border-style: solid;border-width: 1px;margin: 5px 15px 2px; margin-top:15px;padding: 5px;text-align:center"> Please check out <a href="http://www.smackcoders.com/blog/category/free-wordpress-plugins" target="_blank">www.smackcoders.com</a> for the latest news and details of other great plugins and tools. </div><br/>';
+	return $header_content;
 }
+
 function wp_tiger_capture_registering_users($user_id)
 {
 	$siteurl=site_url();
@@ -144,15 +150,7 @@ function wp_tiger_capture_registering_users($user_id)
 		                $content= "<span style='color:red'>Submitting Failed</span>";
 		        }
 		}
-	// firstname  lastname  email
 	}
 }
 
-function settings_saved($msg='')
-{
-	$output .= "<div id='setting-error-settings_updated' style='margin: 5px 0 15px;' class='updated settings-error'> \n";
-	$output .= "<p><strong>Settings Saved</strong></p>$msg";
-	$output .= "</div> \n";
-	echo $output;
-}
 ?>
