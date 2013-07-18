@@ -101,10 +101,10 @@ For quick response and reply please create issues in our [support](http://forge.
  
 == Changelog ==
 
-= 3.0.0
- - User Interface changes and improvements
- - code optimizations
+= 3.0.0 =
+ - Code optimizations
  - Compatibility test for 3.5.2
+  - User Interface changes and improvements
 
 = 2.5.0 =
  - Fixed the Javascript Errors.
@@ -137,7 +137,7 @@ This is the basic version. Tested and found works well without any issues.
 
 == Upgrade Notice ==
 
-v3.0.0 Highly recomended to upgrade now
+v3.0.0 Highly recomended to upgrade
 
 v2.5.0 Must upgrade to enjoy with WordPress-3.5.1 compatibilty.
 
