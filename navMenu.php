@@ -1,6 +1,6 @@
 <?php
-global $menus;
-$menus = array (
+global $wptigermenus;
+$wptigermenus = array (
 		'vtiger_db_fields' => __ ( 'Lead Form Fields' ),
 		'widget_fields' => __ ( 'Widget Form Fields' ),
 		'capture_wp_users' => __ ( 'Sync WP Users' ),
@@ -9,18 +9,18 @@ $menus = array (
 );
 
 function topnavmenu() {
-	global $menus;
+	global $wptigermenus;
 	$class = "";
-	$top_nav_menu = "<div id='top-navigation' class= 'top-navigation-wrapper'>";
-	$top_nav_menu .= "<ul class='Navigation-menu-bar'>";
-	if (is_array ( $menus )) {
-		foreach ( $menus as $links => $text ) {
+	$top_nav_menu = "<div id='wptiger-free-top-navigation' class= 'wptiger-free-top-navigation-wrapper'>";
+	$top_nav_menu .= "<ul class='wptiger-free-Navigation-menu-bar'>";
+	if (is_array ( $wptigermenus )) {
+		foreach ( $wptigermenus as $links => $text ) {
 			if ($_REQUEST ['action'] == $links) {
-				$class = "navigation-menu-link-active";
+				$class = "wptiger-free-navigation-menu-link-active";
 			} elseif (! isset ( $_REQUEST ['action'] ) && ($links == "plugin_settings")) {
-				$class = "navigation-menu-link-active";
+				$class = "wptiger-free-navigation-menu-link-active";
 			}
-			$top_nav_menu .= "<li class='navigation-menu'><a class='nav-menu-link $class' href='?page=wp-tiger&action={$links}'>{$text}</a></li>";
+			$top_nav_menu .= "<li class='wptiger-free-navigation-menu'><a class='wptiger-free-nav-menu-link $class' href='?page=wp-tiger&action={$links}'>{$text}</a></li>";
 			$class = "";
 		}
 	}

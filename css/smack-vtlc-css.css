@@ -101,7 +101,7 @@ input.readonly-text{
 cursor: pointer;
 }
 
-.top-navigation-wrapper
+.wptiger-free-top-navigation-wrapper
 {
 width:65%;
       border-bottom: 2px solid #BCD5E1;
@@ -112,13 +112,13 @@ height: 27px;
 	padding-bottom: 9px;
 }
 
-#top-navigation ul {
+#wptiger-free-top-navigation ul {
 	list-style: none outside none;
 margin: -8px;
 padding: 0;
 }
 
-#top-navigation li {
+#wptiger-free-top-navigation li {
 	-moz-border-bottom-colors: none;
 	-moz-border-left-colors: none;
 	-moz-border-right-colors: none;
@@ -132,7 +132,7 @@ float: left;
        margin-left: 8px;
 }
 
-.nav-menu-link
+.wptiger-free-nav-menu-link
 {
 	border-top-left-radius: 6px;
 	border-top-right-radius: 6px;
@@ -144,14 +144,14 @@ padding: 0.75em 1em;
 	 text-decoration: none;
 }
 
-.nav-menu-link:hover
+.wptiger-free-nav-menu-link:hover
 {
 	background-color : #D2E3EB;
 	text-decoration: none;
 color: #103A4D;
 }
 
-.navigation-menu-link-active {
+.wptiger-free-navigation-menu-link-active {
 	background-color: #FFFFFF;
 	border-bottom: 2px solid #FFFFFF;
 color: #103A4D;
@@ -159,12 +159,12 @@ color: #103A4D;
        text-decoration: none;
 }
 
-.navigation-menu-link-active:hover
+.wptiger-free-navigation-menu-link-active:hover
 {
 	background-color: #FFFFFF;
 color: #103A4D;
 }
-.navigation-menu
+.wptiger-free-navigation-menu
 {
 float: left;
 }

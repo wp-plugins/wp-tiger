@@ -22,29 +22,32 @@ function captureAlreadyRegisteredUsersWpTiger() {
 }
 
 function testDatabaseCredentials(siteurl) {
-	var data = "";
-	data += "hostname=" + jQuery("#hostname").val();
-	data += "&dbuser=" + jQuery("#dbuser").val();
-	data += "&dbpass=" + jQuery("#dbpass").val();
-	data += "&dbname=" + jQuery("#dbname").val();
-	data += "&check=checkdatabase";
-	jQuery
-			.ajax({
-				url : siteurl + '/wp-content/plugins/wp-tiger/test-access.php',
-				type : 'post',
-				data : data,
-				success : function(response) {
-					if (response == 'Success') {
-						document.getElementById('smack-database-test-results').style.fontWeight = "bold";
-						document.getElementById('smack-database-test-results').style.color = "green";
-						document.getElementById('smack-database-test-results').innerHTML = "Database connected successfully";
-					} else {
-						document.getElementById('smack-database-test-results').style.fontWeight = "bold";
-						document.getElementById('smack-database-test-results').style.color = "red";
-						document.getElementById('smack-database-test-results').innerHTML = "Database Credentials are wrong";
-					}
-				}
-			});
+	jQuery.ajax({
+		type: 'POST',
+		url: ajaxurl,
+		data: {
+		    'action'	: 'SmackWPTigertestAccess',
+		    'hostname'	: jQuery("#hostname").val(),
+		    'dbuser'	: jQuery("#dbuser").val(),
+		    'dbpass'	: jQuery("#dbpass").val(),
+		    'dbname'	: jQuery("#dbname").val(),
+		    'check'	: "checkdatabase",
+		},
+		success:function(data) {
+			if (data.indexOf("Success") != -1) {
+				document.getElementById('smack-database-test-results').style.fontWeight = "bold";
+				document.getElementById('smack-database-test-results').style.color = "green";
+				document.getElementById('smack-database-test-results').innerHTML = "Database connected successfully";
+			} else {
+				document.getElementById('smack-database-test-results').style.fontWeight = "bold";
+				document.getElementById('smack-database-test-results').style.color = "red";
+				document.getElementById('smack-database-test-results').innerHTML = "Database Credentials are wrong";
+			}
+		},
+		error: function(errorThrown){
+		    console.log(errorThrown);
+		}
+	});
 }
 
 function upgradetopro() {
