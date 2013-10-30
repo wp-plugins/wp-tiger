@@ -3,8 +3,8 @@ Contributors: smackcoders
 Tags: crm, admin, administration, automatic, contact, form, list, newsletter, plugin, shortcode, sidebar, widget, widgets, wordpress, crm, vtiger, lead, wptiger
 Requires at least: 3.5
 Tested up to: 3.6.1
-Stable tag: 3.0.3
-Version: 3.0.3
+Stable tag: 3.0.4
+Version: 3.0.4
 Author: smackcoders
 Donate link: http://www.smackcoders.com/donate.html
 License: GPLv2 or later
@@ -101,19 +101,22 @@ For quick response and reply please create issues in our [support](http://forge.
  
 == Changelog ==
 
-= 3.0.3
+= 3.0.4 =
+ - Hard reference issue fixed.
+
+= 3.0.3 =
  - 3.6.1 compatibility updates.
  - Important Bug fixes to avoid function redeclare conflict issue with other plugin.
 
-= 3.0.2
+= 3.0.2 =
  - 3.6.1 compatibility updates.
  - UI issues solved.
 
-= 3.0.1
+= 3.0.1 =
  - Installation method changed
  - 25% coupon added for Wordpress Community Members
 
-= 3.0.0
+= 3.0.0 =
  - User Interface changes and improvements
  - code optimizations
  - Compatibility test for 3.5.2

@@ -3,7 +3,7 @@
 *Plugin Name: WP Tiger
 *Plugin URI: http://www.smackcoders.com
 *Description: Easy Lead capture Vtiger Webforms and Contacts synchronization
-*Version: 3.0.3
+*Version: 3.0.4
 *Author: smackcoders.com
 *Author URI: http://www.smackcoders.com
 *
@@ -26,11 +26,16 @@ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 ***********************************************************************************************
 */
 
-require_once(WP_PLUGIN_DIR . "/" . basename(dirname(__FILE__)) . "/SmackWPVT.php");
-require_once(WP_PLUGIN_DIR . "/" . basename(dirname(__FILE__)) . "/smack-vtlc-shortcodes.php");
-require_once(WP_PLUGIN_DIR . "/" . basename(dirname(__FILE__)) . "/navMenu.php");
-require_once(WP_PLUGIN_DIR . "/" . basename(dirname(__FILE__)) . "/SmackWPAdminPages.php");
-require_once(WP_PLUGIN_DIR . "/" . basename(dirname(__FILE__)) . "/CaptureRegisteringUsers.php");
+global $plugin_url_wp_tiger ;
+$plugin_url_wp_tiger = plugins_url( '' , __FILE__ );
+global $plugin_dir_wp_tiger_wp_tiger;
+$plugin_dir_wp_tiger = plugin_dir_path( __FILE__ );
+
+require_once( "{$plugin_dir_wp_tiger}/SmackWPVT.php");
+require_once( "{$plugin_dir_wp_tiger}/smack-vtlc-shortcodes.php");
+require_once( "{$plugin_dir_wp_tiger}/navMenu.php");
+require_once( "{$plugin_dir_wp_tiger}/SmackWPAdminPages.php");
+require_once( "{$plugin_dir_wp_tiger}/CaptureRegisteringUsers.php");
 
 add_action('init',  array('SmackWPVT', 'init'));
 
@@ -38,12 +43,14 @@ register_deactivation_hook( __FILE__, 'wptiger_deactivate' );
 
 // Admin menu settings
 function wptigermenu() {
-	add_menu_page('WPTiger Settings', 'WP-Tiger', 'manage_options', 'wp-tiger', 'wptiger_settings', WP_CONTENT_URL."/plugins/wp-tiger/images/icon.png");
+	global $plugin_url_wp_tiger;
+	add_menu_page('WPTiger Settings', 'WP-Tiger', 'manage_options', 'wp-tiger', 'wptiger_settings', "{$plugin_url_wp_tiger}/images/icon.png");
 }
 
 function LoadWpTigerScript() {
-	wp_enqueue_script("wp-tiger-script", "/wp-content/plugins/wp-tiger/js/smack-vtlc-scripts.js", array("jquery"));
-	wp_enqueue_style("wp-tiger-css", site_url().'/wp-content/plugins/wp-tiger/css/smack-vtlc-css.css');
+	global $plugin_url_wp_tiger;
+	wp_enqueue_script("wp-tiger-script", "{$plugin_url_wp_tiger}/js/smack-vtlc-scripts.js", array("jquery"));
+	wp_enqueue_style("wp-tiger-css", "{$plugin_url_wp_tiger}/css/smack-vtlc-css.css");
 }
 
 function wptiger_deactivate()
@@ -55,7 +62,8 @@ function wptiger_deactivate()
 
 function SmackWPTigertestAccess()
 {
-	require_once(WP_PLUGIN_DIR . "/" . basename(dirname(__FILE__)) . "/test-access.php");
+	global $plugin_url_wp_tiger;
+	require_once("{$plugin_url_wp_tiger}/test-access.php");
 	die;
 }
 

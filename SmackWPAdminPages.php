@@ -9,6 +9,7 @@ class SmackWPAdminPages{
 
 
 	function wptiger_rightContent(){
+		global $plugin_url_wp_tiger;
 		$rightContent = '<div class="wptiger-plugindetail-box" id="wptiger-pluginDetails"><h3>Plugin Details</h3>
 			<div class="wptiger-box-inside wptiger-plugin-details">
 			<table>	<tbody>
@@ -16,13 +17,13 @@ class SmackWPAdminPages{
 			<tr><td><b>Version</b></td><td>3.0.3 <a style="text-decoration:none" href="http://www.smackcoders.com/free-wordpress-vtiger-webforms-module.html" target="_blank">( Update Now )</a></td></tr>
 			</tbody></table>
 			<div class="company-detials" id="company-detials">
-			<div class="wptiger-rateus"><img width="70px" height="40px" style="margin-top:10px;" src="'.WP_CONTENT_URL.'/plugins/wp-tiger/images/SubscribeViaEmail.gif"><a style="margin-left:15px;margin-top:-10px;" class="dash-action" target="_blank" href="http://www.smackcoders.com/free-wordpress-vtiger-webforms-module.html">Rate Us</a></div>
+			<div class="wptiger-rateus"><img width="70px" height="40px" style="margin-top:10px;" src="'.$plugin_url_wp_tiger.'/images/SubscribeViaEmail.gif"><a style="margin-left:15px;margin-top:-10px;" class="dash-action" target="_blank" href="http://www.smackcoders.com/free-wordpress-vtiger-webforms-module.html">Rate Us</a></div>
 			<div class="sociallinks">
 			<label>Social Links :</label>
-			<span><a target="_blank" href="https://plus.google.com/106094602431590125432"><img src="'.WP_CONTENT_URL.'/plugins/wp-tiger/images/googleplus.png"></a></span>
-			<span><a target="_blank" href="https://www.facebook.com/smackcoders"><img src="'.WP_CONTENT_URL.'/plugins/wp-tiger/images/facebook.png"></a></span>
-			<span><a target="_blank" href="https://twitter.com/smackcoders"><img src="'.WP_CONTENT_URL.'/plugins/wp-tiger/images/twitter.png"></a></span>
-			<span><a target="_blank" href="http://www.linkedin.com/company/smackcoders"><img src="'.WP_CONTENT_URL.'/plugins/wp-tiger/images/linkedin.png"></a></span>
+			<span><a target="_blank" href="https://plus.google.com/106094602431590125432"><img src="'.$plugin_url_wp_tiger.'/images/googleplus.png"></a></span>
+			<span><a target="_blank" href="https://www.facebook.com/smackcoders"><img src="'.$plugin_url_wp_tiger.'/images/facebook.png"></a></span>
+			<span><a target="_blank" href="https://twitter.com/smackcoders"><img src="'.$plugin_url_wp_tiger.'/images/twitter.png"></a></span>
+			<span><a target="_blank" href="http://www.linkedin.com/company/smackcoders"><img src="'.$plugin_url_wp_tiger.'/images/linkedin.png"></a></span>
 			</div>
 			<div class="poweredby" id="poweredby"><a target="_blank" href="http://www.smackcoders.com/"><img src="http://www.smackcoders.com/wp-content/uploads/2012/09/Smack_poweredby_200.png"></a></div>
 			</div>
@@ -86,7 +87,9 @@ class SmackWPAdminPages{
 	<?php
 	}
 
-	function capture_wp_users(){ ?>
+	function capture_wp_users(){
+		global $plugin_url_wp_tiger;
+	?>
 		<div class="upgradetopro" id="upgradetopro" style="display:none;">This feature is only available in Pro Version, Please <a href="http://www.smackcoders.com/wp-vtiger-pro.html">UPGRADE TO PRO</a></div>
 		<div style="width:90%;margin-top:15px;">
 		<div style="float:left">
@@ -121,7 +124,7 @@ class SmackWPAdminPages{
 			echo "checked";
 		}
 		$contentUrl = WP_CONTENT_URL;
-		$imagepath = $contentUrl.'/plugins/wp-tiger/images/'; 
+		$imagepath = "{$plugin_url_wp_tiger}/images/"; 
 		?>
 		>
 				</td>
@@ -304,10 +307,11 @@ class SmackWPAdminPages{
 
 
 	function widget_fields() {
+		global $plugin_url_wp_tiger;
 		$config = get_option ( 'smack_vtlc_settings' );
 		$config_widget_field = get_option ( "smack_vtlc_widget_field_settings" );
 		$topContent = $this->topContent ();
-		$imagepath = WP_CONTENT_URL . '/plugins/wp-tiger/images/';
+		$imagepath = "{$plugin_url_wp_tiger}/images/";
 		
 		if (isset ( $_POST ['widget_field_posted'] )) {
 			$config_widget_field ['widgetfieldlist'] = array ();
@@ -485,6 +489,7 @@ class SmackWPAdminPages{
 	 * Function to get vtiger fields from the database
 	 */
 	function vtiger_db_fields() {
+		global $plugin_url_wp_tiger;
 		$config = get_option ( 'smack_vtlc_settings' );
 		if (isset ( $_POST ['hostname'] )) {
 			$config ['hostname'] = $_POST ['hostname'];
@@ -621,7 +626,7 @@ class SmackWPAdminPages{
 				}
 				$content .= '</td>';			
 				$contentUrl = WP_CONTENT_URL;
-				$imagepath = $contentUrl . '/plugins/wp-tiger/images/';
+				$imagepath = "{$plugin_url_wp_tiger}/images/";
 				$content .= '<td class="smack-field-td-middleit">';
 				if (in_array ( $field->fieldid, $config_field ['fieldlist'] )) {
 					if ($typeofdata [1] == 'M') {
