@@ -1,4 +1,41 @@
 <?php
+/*********************************************************************************
+ * Easy Lead capture Vtiger Webforms and Contacts synchronization is a tool 
+ * for capturing leads and contacts to VtigerCRM from WordPress developed by 
+ * Smackcoder. Copyright (C) 2013 Smackcoders.
+ *
+ * Easy Lead capture Vtiger Webforms and Contacts synchronization is free 
+ * software; you can redistribute it and/or modify it under the terms of the GNU 
+ * Affero General Public License version 3 as published by the Free Software 
+ * Foundation with the addition of the following permission added to Section 15 
+ * as permitted in Section 7(a): FOR ANY PART OF THE COVERED WORK IN WHICH THE 
+ * COPYRIGHT IS OWNED BY Smackcoders, FEasy Lead capture Vtiger Webforms and 
+ * Contacts synchronization  DISCLAIMS THE WARRANTY OF NON INFRINGEMENT OF THIRD
+ * PARTY RIGHTS.
+ *
+ * Easy Lead capture Vtiger Webforms and Contacts synchronization is 
+ * distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+ * without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR
+ * PURPOSE.  See the GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License along with
+ * this program; if not, see http://www.gnu.org/licenses or write to the Free
+ * Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+ * 02110-1301 USA.
+ *
+ * You can contact Smackcoders at email address info@smackcoders.com.
+ *
+ * The interactive user interfaces in original and modified versions
+ * of this program must display Appropriate Legal Notices, as required under
+ * Section 5 of the GNU Affero General Public License version 3.
+ *
+ * In accordance with Section 7(b) of the GNU Affero General Public License version 3,
+ * these Appropriate Legal Notices must retain the display of the Easy Lead capture 
+ * Vtiger Webforms and Contacts synchronization copyright notice. If the
+ * display of the logo is not reasonably feasible for technical reasons, the 
+ * Appropriate Legal Notices must display the words "Copyright Smackcoders. 2013.
+ * All rights reserved".
+ ********************************************************************************/
 class SmackWPAdminPages{
 /*
         require_once(WP_PLUGIN_DIR . "/" . basename(dirname(__FILE__)) . "/get-vt-fields.php");
@@ -165,18 +202,54 @@ class SmackWPAdminPages{
 				'dbpass' => __('Database Password'),
 				'dbname' => __('Database Name'),
 				'url' => __('URL'),
+				'smack_host_username' => __("Smack Host Username"),
+				'smack_host_access_key' => __("Smack Host Access Key"),
 				'appkey' => __('Application Key'),
 				'wp_tiger_smack_user_capture' => __('Capture User'),
 			);
 
 
 		if (sizeof ( $_POST ) && isset ( $_POST ["smack_vtlc_hidden"] )) {
-			
+			$config = get_option( "smack_vtlc_settings" );
 			foreach ( $fieldNames as $field => $value ) {
-				$config [$field] = $_POST [$field];
+				if(($field != "dbpass") && ($field != "smack_host_access_key"))
+				{
+					$config [$field] = $_POST [$field];
+				}
+				else
+				{
+					if(($_POST['dbpass'] != '') && ($field == "dbpass"))
+					{
+						$config [$field] = $_POST [$field];
+					}
+					elseif(($_POST['smack_host_access_key'] != '') && ($field == "smack_host_access_key"))
+					{
+						$config [$field] = $_POST [$field];
+					}
+				}
 			}
 			
+			$dbvalues = new wpdb($config['dbuser'], $config['dbpass'], $config['dbname'], $config['hostname']);
+			$versions = $dbvalues->get_results("SELECT current_version FROM vtiger_version order by id desc limit 1");
+			foreach($versions as $tmp)
+			{
+				$version = $tmp->current_version;
+			}
+			$config['version'] = $version;
 			update_option ( 'smack_vtlc_settings', $config );
+			$wp_tiger_contact_form_attempts = get_option( 'wp-tiger-contact-form-attempts' );
+			$wp_tiger_contact_widget_form_attempts = get_option( 'wp-tiger-contact-widget-form-attempts' );
+                        $successfulAtemptsOption['total'] = 0;
+                        $successfulAtemptsOption['success'] = 0;
+
+			if( !is_array($wp_tiger_contact_form_attempts) )
+			{
+        	                update_option('wp-tiger-contact-form-attempts', $successfulAtemptsOption );
+			}
+			if( !is_array($wp_tiger_contact_widget_form_attempts) )
+			{
+				update_option('wp-tiger-contact-widget-form-attempts' , $successfulAtemptsOption );
+			}
 		}
 
 		$siteurl = site_url ();
@@ -184,11 +257,10 @@ class SmackWPAdminPages{
 		$config_field = get_option ( "smack_vtlc_field_settings" );
 		
 		$content = '<div style="width:95%">
-				<div style="float:left">';
+				<div style="float:left; width:45%;">';
 		
 		if (! isset ( $config_field ['fieldlist'] )) {
 			$content .= '<form class="left-side-content" id="smack_vtlc_form"
-							action="' . $siteurl . '/wp-admin/admin.php?page=wp-tiger&action=vtiger_db_fields" 
 							method="post">';
 		} else {
 			$content .= '<form class="left-side-content" id="smack_vtlc_form" 
@@ -209,25 +281,24 @@ class SmackWPAdminPages{
 							<table>
 								<tr>
 									<td class="smack_settings_smack_settings_td_label"><label>Database
-											hostname</label></td>
+											Hostname</label></td>
 									<td><input class="smack_settings_input_text" type="text"
 										id="hostname" name="hostname"
 										value="' . $config ['hostname'] . '" /></td>
 								</tr>
 								<tr>
-									<td class="smack_settings_td_label"><label>Database username</label>
+									<td class="smack_settings_td_label"><label>Database Username</label>
 									</td>
 									<td><input class="smack_settings_input_text" type="text" id="dbuser"
 										name="dbuser" value="' . $config ['dbuser'] . '" /></td>
 								</tr>
 								<tr>
-									<td class="smack_settings_td_label"><label>Database password</label>
+									<td class="smack_settings_td_label"><label>Database Password</label>
 									</td>
-									<td><input class="smack_settings_input_text" type="text" id="dbpass"
-										name="dbpass" value="' . $config ['dbpass'] . '" /><br /></td>
+									<td><input class="smack_settings_input_text" type="password" id="dbpass" onblur="enableTestDatabaseCredentials();" name="dbpass" autocomplete="off" /><br /></td>
 								</tr>
 								<tr>
-									<td class="smack_settings_td_label"><label>Database name</label></td>
+									<td class="smack_settings_td_label"><label>Database Name</label></td>
 									<td><input class="smack_settings_input_text" type="text" id="dbname"
 										name="dbname" value="' . $config ['dbname'] . '" /></td>
 								</tr>
@@ -235,8 +306,8 @@ class SmackWPAdminPages{
 						</div>
 						<table>
 							<tr>
-								<td class="smack_settings_td_label"><input type="button"
-									class="button" value="Test database connection"
+								<td class="smack_settings_td_label"><input type="button" id="Test-Database-Credentials"
+									class="button" disabled=disabled value="Test database connection"
 									onclick="testDatabaseCredentials(\'' . $siteurl . '\');" /></td>
 								<td id="smack-database-test-results"></td>
 							</tr>
@@ -250,6 +321,27 @@ class SmackWPAdminPages{
 									<td><input class="smack_settings_input_text" type="text" id="url"
 										name="url" value="' . $config ['url'] . '" /></td>
 								</tr>
+								<tr>
+									<td class="smack_settings_td_label"><label>Vtiger Username</label></td>
+									<td><input class="smack_settings_input_text" type="text" id="smack_host_username"
+										name="smack_host_username" value="' . $config ['smack_host_username'] . '" /></td>
+								</tr>
+								<tr>
+									<td class="smack_settings_td_label"><label>Vtiger AccessKey</label></td>
+									<td><input class="smack_settings_input_text" type="password" id="smack_host_access_key" onblur="enableTestVtigerCredentials();" autocomplete="off"
+										name="smack_host_access_key" /></td>
+								</tr>
+							</table>
+							<table>
+								<tr>
+									<td class="smack_settings_td_label"><input type="button"
+										class="button" disabled=disabled value="Test Vtiger Credentials" id="Test-Vtiger-Credentials" 
+										onclick="testVtigerCredentials(\'' . $siteurl . '\');" /></td>
+									<td id="smack-vtiger-test-results"></td>
+								</tr>
+							
+							</table>
+							<table>
 								<tr>
 									<td class="smack_settings_td_label"><label>Application Key</label></td>
 									<td><input class="smack_settings_input_text" type="text" id="appkey"
@@ -353,7 +445,18 @@ class SmackWPAdminPages{
 				saveSettings();
 				</script>
 			<?php }
-			$widgetContent .= '<div style="width:25%;float:left;"><h3 class="title">Widget Field settings</h3></div><div style="width:75%;float:right;"><p>( Please use the short code <b> [display_widget_area]</b> in widgets )</p></div><br/><br/>
+			$wp_tiger_contact_form_attempts = get_option( 'wp-tiger-contact-widget-form-attempts' );
+			$total = $wp_tiger_contact_form_attempts['total'];
+			$success = $wp_tiger_contact_form_attempts['success'];
+			$failure = $total - $success;
+			if(isset($total))
+			{
+				$widgetContent .= '<b>Submissions :-</b> ( Success <span style="color:green; cursor:pointer;" onclick="alertMsgWpTiger(\' Successful captures from this form '.$success.' \')";> '.$success.' </span> / Failure <span style="color:red; cursor:pointer;" onclick="alertMsgWpTiger(\' Failed attempts from this form '.$failure.' \')";> '.$failure.' </span> </span> ) Total <span style="color:green; cursor:pointer;" onclick="alertMsgWpTiger(\' Total trials from this form '.$total.' \')"; > '.$total.' </span> <br/>';
+			}
+
+			$widgetContent .= '<div style="width:25%;float:left;"><h3 class="title">Widget Field settings</h3></div><div style="width:75%;float:right;"><p>( Please use the short code <b> [display_widget_area]';
+
+			$widgetContent.= '</b> in widgets )</p></div><br/><br/>
 							<div style="margin-top:10px;">
 						<div style="padding:2px;"><input type="checkbox" id="skipduplicate" onclick="upgradetopro()" /> Skip Duplicates. Note: Email should be mandatory and enabled to make this work. </div>
 						<div style="padding:2px;"><input type="checkbox" id="generateshortcode" onclick="upgradetopro()" /> Generate this Shortcode for widget form. </div>
@@ -543,8 +646,21 @@ class SmackWPAdminPages{
 				<script>
 				saveSettings();
 				</script>
-			<?php } 
-				$content .= '<div style="width:15%;float:left;"><h3 class="title">Field settings</h3></div><div style="width:85%;float:right;"><p>( Please use the short code <b> [display_contact_page]</b> in page or post )</p></div><br/><br/>
+			<?php }
+				$wp_tiger_contact_form_attempts = get_option( 'wp-tiger-contact-form-attempts' );
+				$total = $wp_tiger_contact_form_attempts['total'];
+				$success = $wp_tiger_contact_form_attempts['success'];
+				$failure = $total - $success;
+
+				if(isset($total))
+				{
+	                                $content .= '<b>Submissions :- </b> ( Success <span style="color:green; cursor:pointer;" onclick="alertMsgWpTiger(\' Successful captures from this form '.$success.' \')" > '.$success.' </span> / Failures <span style="color:red; cursor:pointer;" onclick="alertMsgWpTiger(\' Failed attempts from this form '.$failure.' \')" > '.$failure.' </span> </span> ) Total <span style="color:green; cursor:pointer;"  onclick="alertMsgWpTiger(\' Total trials from this form '.$total.' \')" > '.$total.' </span> <br/>';
+//					$content .= '<span style="color:green; cursor:pointer;"> 1 </span> ( <span style="color:green; cursor:pointer;"> 1 </span> / <span style="color:red; cursor:pointer;"> 2 </span> )';
+				}
+
+				$content .= '<div style="width:25%;float:left;"><h3 class="title">Field settings</h3></div><div style="width:75%;float:right;"><p>( Please use the short code <b> [display_contact_page]';
+
+				$content .= '</b> in page or post )</p></div><br/><br/>
 				<div style="margin-top:10px;">
 				<div style="padding:2px;"><input type="checkbox" id="skipduplicate" onclick="upgradetopro()" /> Skip Duplicates. Note: Email should be mandatory and enabled to make this work. </div>
 				<div style="padding:2px;"><input type="checkbox" id="generateshortcode" onclick="upgradetopro()" /> Generate this Shortcode for widget form. </div>

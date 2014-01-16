@@ -1,3 +1,31 @@
+function alertMsgWpTiger( msg ){
+	alert(msg);
+}
+
+function enableTestDatabaseCredentials() {
+	var str = document.getElementById("dbpass").value;
+	if(str != '')
+	{
+		document.getElementById("Test-Database-Credentials").disabled = false;
+	}
+	else
+	{
+		document.getElementById("Test-Database-Credentials").disabled = true;
+	}
+}
+
+function enableTestVtigerCredentials() {
+        var str = document.getElementById("smack_host_access_key").value;
+        if(str != '')
+        {
+                document.getElementById("Test-Vtiger-Credentials").disabled = false;
+        }
+        else
+        {
+                document.getElementById("Test-Vtiger-Credentials").disabled = true;
+        }
+}
+
 function smack_validate_Fields() {
 	var no_of_fields = jQuery('#no_of_vt_fields').val();
 	for ( var i = 0; i < no_of_fields; i++) {
@@ -19,6 +47,34 @@ function captureAlreadyRegisteredUsersWpTiger() {
 	document.getElementById('please-upgrade').style.fontFamily = "Sans Serif";
 	document.getElementById('please-upgrade').style.color = "red";
 	document.getElementById('please-upgrade').innerHTML = "Please Upgrade to WP-Tiger-Pro for Sync feature";
+}
+
+function testVtigerCredentials(siteurl){
+	jQuery.ajax({
+		type: 'POST',
+		url: ajaxurl,
+		data: {
+		    'action'			: 'SmackWPTigertestVtigerAccess',
+		    'url'			: jQuery("#url").val(),
+		    'smack_host_username'	: jQuery("#smack_host_username").val(),
+		    'smack_host_access_key'	: jQuery("#smack_host_access_key").val(),
+		    'check'			: "checkVtigerWebservice",
+		},
+		success:function(data) {
+			if (data.indexOf("success") != -1) {
+				document.getElementById('smack-vtiger-test-results').style.fontWeight = "bold";
+				document.getElementById('smack-vtiger-test-results').style.color = "green";
+				document.getElementById('smack-vtiger-test-results').innerHTML = "Vtiger connected successfully";
+			} else {
+				document.getElementById('smack-vtiger-test-results').style.fontWeight = "bold";
+				document.getElementById('smack-vtiger-test-results').style.color = "red";
+				document.getElementById('smack-vtiger-test-results').innerHTML = "Vtiger Credentials are wrong";
+			}
+		},
+		error: function(errorThrown){
+		    console.log(errorThrown);
+		}
+	});
 }
 
 function testDatabaseCredentials(siteurl) {

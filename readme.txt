@@ -2,9 +2,9 @@
 Contributors: smackcoders
 Tags: crm, admin, administration, automatic, contact, form, list, newsletter, plugin, shortcode, sidebar, widget, widgets, wordpress, crm, vtiger, lead, wptiger
 Requires at least: 3.5
-Tested up to: 3.6.1
-Stable tag: 3.0.4
-Version: 3.0.4
+Tested up to: 3.8
+Stable tag: 3.1.0
+Version: 3.1.0
 Author: smackcoders
 Donate link: http://www.smackcoders.com/donate.html
 License: GPLv2 or later
@@ -100,6 +100,10 @@ For quick response and reply please create issues in our [support](http://forge.
 5. The screenshot-5.png shows the form placed in widget area, which captures the VtigerCRM leads.
  
 == Changelog ==
+
+= 3.1.0 =
+ - Security measures added on handling VtigerCRM credentials
+ - vtiger6 support added 
 
 = 3.0.4 =
  - Hard reference issue fixed.
