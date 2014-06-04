@@ -162,28 +162,28 @@ This is the basic version. Tested and found works well without any issues.
 == Upgrade Notice ==
 
 = 3.1.1 =
-* Recommended upgrade with UI changes and bug fixes
+Recommended upgrade with UI changes and bug fixes
 
 = 3.1.0 =
-* Recommended to upgrade for security issues
+Recommended to upgrade for security issues
 
 = 3.0.0 =
-* Highly recommended to upgrade now
+Highly recommended to upgrade now
 
 = 2.5.0 =
-* Must upgrade to enjoy with WordPress-3.5.1 compatibility.
+Must upgrade to enjoy with WordPress-3.5.1 compatibility.
 
 = 2.1.0 =
-* Important css issue fix, added more details in read me and added donate button.
+Important css issue fix, added more details in read me and added donate button.
 
 = 2.0.0 =
-* Must upgrade to enjoy new features and usability changes.
+Must upgrade to enjoy new features and usability changes.
 
 = 1.1.0 =
-* Must upgrade. Important security issue fix and major modifications.
+Must upgrade. Important security issue fix and major modifications.
 
 = 1.0.0 =
-* Initial release.
+Initial release.
 
 == Frequently Asked Questions ==
 
