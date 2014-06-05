@@ -72,7 +72,7 @@ class SmackWPAdminPages {
 		?>
 		<div class="upgradetopro" id="upgradetopro" style="display:none;">This feature is only available in Pro Version,
 			Please <a href="http://www.smackcoders.com/wp-vtiger-pro.html">UPGRADE TO PRO</a></div>
-			<img src="<?php echo WP_PLUGIN_URL; ?>/wp-tiger/screenshot-6.png" style="opacity:0.6;"
+			<img src="<?php echo WP_PLUGIN_URL; ?>/wp-tiger/images/listshortcode.png" style="opacity:0.6;"
 			 onclick="upgradetopro();"/>
 
 	<?php
