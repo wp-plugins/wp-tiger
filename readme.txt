@@ -2,7 +2,7 @@
 Contributors: smackcoders
 Tags: crm, admin, administration, automatic, contact, form, list, newsletter, plugin, shortcode, sidebar, widget, widgets, wordpress, vtiger, lead, wptiger, lead capture, form generator, form builder, contact sync, vtiger crm, optin form, form
 Requires at least: 3.5
-Tested up to: 3.9.1
+Tested up to: 4.0
 Stable tag: 3.1.1
 Version: 3.1.1
 Author: smackcoders
