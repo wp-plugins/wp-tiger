@@ -3,8 +3,8 @@ Contributors: smackcoders
 Tags: crm, admin, administration, automatic, contact, form, list, newsletter, plugin, shortcode, sidebar, widget, widgets, wordpress, vtiger, lead, wptiger, lead capture, form generator, form builder, contact sync, vtiger crm, optin form, form
 Requires at least: 3.5
 Tested up to: 4.0
-Stable tag: 3.1.1
-Version: 3.1.1
+Stable tag: 3.1.11
+Version: 3.1.11
 Author: smackcoders
 Donate link: http://www.smackcoders.com/donate.html
 License: GPLv2 or later
@@ -13,7 +13,9 @@ An easy, automated and advanced VTiger webforms generator for Wordpress to captu
 
 == Description ==
 
-Version 3.1.1 is released with improved UI and bug fixes. WP-Tiger plugin is a simple, advanced, easy to set up VTiger web form generator for Wordpress. It helps to generate a web form via user friendly plugin interface which in turn used as a contact form to convert your traffic/visitors as high potential leads to VTiger CRM. 
+= [WP Tiger](https://wordpress.org/plugins/wp-tiger/) plugin is now part of [WP Leads Builder For Any CRM](https://wordpress.org/plugins/wp-leads-builder-any-crm), a combined plugins for all CRM like [wp tiger](https://wordpress.org/plugins/wp-tiger/), [wp sugar free](https://wordpress.org/plugins/wp-sugar-free/), [wp zoho](https://wordpress.org/plugins/wp-zoho-crm/) plugins with more features. Users are advised to download the new plugins no future updates or support will be available for this plugin. =
+
+Version 3.1.11 is available with debug mode enable and disable options in settings along with menu changes. WP-Tiger plugin is a simple, advanced, easy to set up VTiger web form generator for Wordpress. It helps to generate a web form via user friendly plugin interface which in turn used as a contact form to convert your traffic/visitors as high potential leads to VTiger CRM. 
 
 - No HTML 
 - No Manual Work 
@@ -101,6 +103,11 @@ For quick response and reply please create issues in our [support](http://forge.
  
 == Changelog ==
 
+= 3.1.11 =
+ - Features moved to new combined plugin [Leads Builder For Any CRM](https://wordpress.org/plugins/wp-leads-builder-any-crm)
+ - Added: Debug mode enable/disable options.
+ - Modified: Menu order changes.
+
 = 3.1.1 =
  - Report Bugs fixed
  - Improved UI to add usability
@@ -160,6 +167,9 @@ This is the basic version. Tested and found works well without any issues.
 
 
 == Upgrade Notice ==
+
+= 3.1.11 =
+Now users are advised to migrate to new plugin with more features. 
 
 = 3.1.1 =
 Recommended upgrade with UI changes and bug fixes

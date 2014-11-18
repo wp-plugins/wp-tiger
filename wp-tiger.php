@@ -4,7 +4,7 @@
  * Plugin Name: WP Tiger
  * Plugin URI: http://www.smackcoders.com
  * Description: Easy Lead capture Vtiger Webforms and Contacts synchronization
- * Version: 3.1.1
+ * Version: 3.1.11
  * Author: smackcoders.com
  * Author URI: http://www.smackcoders.com
  * Easy Lead capture Vtiger Webforms and Contacts synchronization is a tool
@@ -48,6 +48,13 @@ global $plugin_url_wp_tiger;
 $plugin_url_wp_tiger = plugins_url('', __FILE__);
 global $plugin_dir_wp_tiger;
 $plugin_dir_wp_tiger = plugin_dir_path(__FILE__);
+
+// Debug enable/disable 
+$get_settings = get_option("smack_vtlc_settings");
+if($get_settings['wp_tiger_smack_debug'] != 'on') {
+	error_reporting(0);
+	ini_set('display_errors', 'Off');
+}
 
 require_once("{$plugin_dir_wp_tiger}/SmackWPVT.php");
 require_once("{$plugin_dir_wp_tiger}/smack-vtlc-shortcodes.php");

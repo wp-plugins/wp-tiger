@@ -43,7 +43,8 @@ $wptigermenus = array('vtiger_db_fields' => __('Lead Form Fields'), 'widget_fiel
 function topnavmenu() {
 	global $wptigermenus;
 	$class = "";
-	$top_nav_menu = "<div class='nav-pills-div'>";
+	$top_nav_menu = '<div class="update-message" style="text-align:center;">Please migrate to our new plugin <a href="https://wordpress.org/plugins/wp-leads-builder-any-crm/" target="blank">Leads Builder For Any CRM</a> for advanced features.</div>';
+	$top_nav_menu .= "<div class='nav-pills-div'>";
 	$top_nav_menu .= '<ul class="nav nav-pills">';
 	$top_nav_menu .= '       <ul class="nav nav-tabs">';
 	if (is_array($wptigermenus)) {
