@@ -13,7 +13,7 @@ An easy, automated and advanced VTiger webforms generator for Wordpress to captu
 
 == Description ==
 
-= [WP Tiger](https://wordpress.org/plugins/wp-tiger/) plugin is now part of [WP Leads Builder For Any CRM](https://wordpress.org/plugins/wp-leads-builder-any-crm), a combined plugins for all CRM like [wp tiger](https://wordpress.org/plugins/wp-tiger/), [wp sugar free](https://wordpress.org/plugins/wp-sugar-free/), [wp zoho](https://wordpress.org/plugins/wp-zoho-crm/) plugins with more features. Users are advised to download the new plugins no future updates or support will be available for this plugin. =
+[WP Tiger](https://wordpress.org/plugins/wp-tiger/) plugin is now part of [WP Leads Builder For Any CRM](https://wordpress.org/plugins/wp-leads-builder-any-crm), a combined plugins for all CRM like [wp tiger](https://wordpress.org/plugins/wp-tiger/), [wp sugar free](https://wordpress.org/plugins/wp-sugar-free/), [wp zoho](https://wordpress.org/plugins/wp-zoho-crm/) plugins with more features. Users are advised to download the new plugins no future updates or support will be available for this plugin.
 
 Version 3.1.11 is available with debug mode enable and disable options in settings along with menu changes. WP-Tiger plugin is a simple, advanced, easy to set up VTiger web form generator for Wordpress. It helps to generate a web form via user friendly plugin interface which in turn used as a contact form to convert your traffic/visitors as high potential leads to VTiger CRM. 
 
