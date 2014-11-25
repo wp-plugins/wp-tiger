@@ -6,7 +6,7 @@ Tested up to: 4.0
 Stable tag: 3.1.11
 Version: 3.1.11
 Author: smackcoders
-Donate link: http://www.smackcoders.com/donate.html
+Donate link: https://www.smackcoders.com/store/donate.html
 License: GPLv2 or later
  
 An easy, automated and advanced VTiger webforms generator for Wordpress to capture leads. Also integrate/sync Wordpress members to VTiger Contacts.
@@ -42,7 +42,7 @@ WP-Tiger plugin is an advanced VTiger web forms module download now to enjoy the
 
 In Pro version of WP Tiger users can generate unlimited web forms with different short codes. Also assign a user to each form data which assigns the user automatically to the lead or contact captured by the form in VTiger. The pro version uses VTiger web service API to connect Wordpress and VTiger CRM. You can only create single web form on Leads Module for now in VTiger, but in WP Tiger Pro you can create multiple web forms to capture leads and contacts to relevant vtiger module also. 
 
-**In [Pro version](http://smackcoders.com/wp-vtiger-pro.html) you can enjoy most advances features like**
+**In [Pro version](https://www.smackcoders.com/store/pro-wordpress-vtiger-webforms-module.html) you can enjoy most advances features like**
 
 *    Pro version uses VTiger web service API to sync with VTiger CRM
 *    Unlimited web forms for both lead and contacts module
@@ -64,7 +64,8 @@ In Pro version of WP Tiger users can generate unlimited web forms with different
 *    And more form options like pop up, floating and sliding with advanced settings are under development pipeline
 
 
-Kindly click here to read more about [WP Tiger Pro features and live demo](www.smackcoders.com/wp-vtiger-pro.html)
+Kindly click here to read more about 
+[WP Tiger Pro features and live demo](https://www.smackcoders.com/store/pro-wordpress-vtiger-webforms-module.html)
 
 How To Install WP Tiger Free plugin version 2.5.0 in Wordpress 3.5 and above through Wordpress plugin install?
 This video guides you step by step to Install WP Tiger Free plugin version 2.5.0 in Wordpress 3.5 and above through Wordpress plugin install. 
@@ -81,16 +82,9 @@ This video guides you step by step to
  
 Feel free to request for the new features. Requested features will be added in next release based on the effort involved. Additional features are under development. Please check back again for updated version.
 
-Support and Feature requests 
----------------------------- 
-Please visit http://forge.smackcoders.com/projects/wptiger for guides and tutorials. 
-For quick response and reply please create issues in our [support](http://forge.smackcoders.com/projects/wptiger/issues) instead of Wordpress support forum. Support at Wordpress is not possible for now.
-
-
-
 
 == Installation ==
- Please click here for [Detailed Installation Instructions](http://www.smackcoders.com/blog/how-to-guide-free-wordpress-vtiger-lead-capture-plugin.html)
+ Please click here for [Detailed Installation Instructions](https://www.smackcoders.com/blog/how-to-guide-free-wordpress-vtiger-lead-capture-plugin.html)
 
  
 == Screenshots ==
@@ -206,7 +200,3 @@ This video guides you step by step to
 2. How to create web forms in wordpress to capture leads directly to vtiger leads module? How to fetch vtiger lead fields to generate a form in wordpress?
 3. How to enable, disable, reorder, rename and make mandatory of fields from wordpress plugin UI without changing in vtiger?
 <p>http://www.youtube.com/watch?v=lX0evNGL5tc</p>
-
-Please click here for [ Detailed Frequently Asked Questions](http://www.smackcoders.com/blog/how-to-guide-free-wordpress-vtiger-lead-capture-plugin.html)
-
-
