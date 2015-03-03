@@ -4,7 +4,7 @@
  * Plugin Name: WP Tiger
  * Plugin URI: http://www.smackcoders.com
  * Description: Easy Lead capture Vtiger Webforms and Contacts synchronization
- * Version: 3.1.11
+ * Version: 3.2
  * Author: smackcoders.com
  * Author URI: http://www.smackcoders.com
  * Easy Lead capture Vtiger Webforms and Contacts synchronization is a tool
@@ -103,16 +103,53 @@ function SmackWPTigertestVtigerAccess() {
 add_action('wp_ajax_SmackWPTigertestVtigerAccess', 'SmackWPTigertestVtigerAccess');
 
 function wptiger_settings() {
-                       	$AdminPages = new SmackWPAdminPages();
-	echo $AdminPages->topContent();
-	$action = getActionWpTiger();
-	?>
-	<div id="main-page">
-                
-		<?php echo topnavmenu(); ?>
-		<div>
-			<?php $AdminPages->$action(); ?>
+
+	$AdminPages = new SmackWPAdminPages();
+        // Auto plugin enabler
+        $get_activate_plugin_list = get_option('active_plugins');
+        if(!in_array('wp-leads-builder-for-any-crm/index.php', $get_activate_plugin_list)) { ?>
+		<div align=center style="padding-top:220px;">
+        		<form name="upgrade_to_latest" method="post">
+                		<label style="font-size:2em;" id="info">Upgrade to Lead Builder CRM</label>
+                		<input type="submit" class="" name="upgrade" id="upgrade" value="Click Here"/>
+        		</form>
 		</div>
-	</div>
-<?php
+		<?php if (isset($_POST['upgrade'])) { ?>
+        	<script>
+                	document.getElementById('info').style.display = 'none';
+                	document.getElementById('upgrade').style.display = 'none';
+		</script>
+		<div align=center style="padding-top:0px;">
+			<?php echo migrate_leadbuild(); ?>
+		</div>
+		<?php
+		}
+        }
+}
+
+function migrate_leadbuild() {
+
+	require_once(ABSPATH . 'wp-admin/includes/class-wp-upgrader.php');
+      	$plugin['source'] = 'https://downloads.wordpress.org/plugin/wp-leads-builder-any-crm.1.1.zip';
+    	$source = ( 'upload' == $type ) ? $this->default_path . $plugin['source'] : $plugin['source'];
+    	/** Create a new instance of Plugin_Upgrader */
+     	$upgrader = new Plugin_Upgrader( $skin = new Plugin_Installer_Skin( compact( 'type', 'title', 'url', 'nonce', 'plugin', 'api' ) ) );
+   	/** Perform the action and install the plugin from the $source urldecode() */
+     	$upgrader->install( $source );
+  	/** Flush plugins cache so we can make sure that the installed plugins list is always up to date */
+     	wp_cache_flush();
+      	$plugin_activate = $upgrader->plugin_info(); // Grab the plugin info from the Plugin_Upgrader method
+ 	$activate = activate_plugin( $plugin_activate ); // Activate the plugin
+	if ( !is_wp_error( $activate ) )
+                deactivate_plugins('wp-tiger/wp-tiger.php');//Deactivate tiger plugin
+    	$this->populate_file_path(); // Re-populate the file path now that the plugin has been installed and activated
+   	if ( is_wp_error( $activate ) ) {
+        	echo '<div id="message" class="error"><p>' . $activate->get_error_message() . '</p></div>';
+            	echo '<p><a href="' . add_query_arg( 'page', $this->menu, admin_url( $this->parent_url_slug ) ) . '" title="' . esc_attr( $this->strings['return'] ) . '" target="_parent">' . __( 'Return to Required Plugins Installer', $this->domain ) . '</a></p>';
+             	return true; // End it here if there is an error with automatic activation
+      	}
+     	else {
+           	echo '<p>' . $this->strings['plugin_activated'] . '</p>';
+     	}
+
 }
